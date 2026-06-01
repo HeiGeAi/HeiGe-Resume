@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>江野 · 资深后端工程师 · 简历</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#111114; --ink-2:#1c1c22; --paper:#ffffff; --text:#1a1a1e;
+    --muted:#6a6a72; --line:#e3e3e6; --ember:#ff4d12; --ember-deep:#d83a08;
+    --display:"Archivo","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{font-family:var(--body);color:var(--text);background:#e9e9ec;line-height:1.5}
+
+  .page{width:210mm;min-height:297mm;margin:24px auto;background:var(--paper);
+    box-shadow:0 4px 30px rgba(0,0,0,.18);position:relative;overflow:hidden}
+
+  /* header dark band */
+  .head{background:var(--ink);color:#f3f1ec;padding:21mm 18mm 10mm}
+  .head .name{font-family:var(--display);font-weight:900;font-size:42pt;line-height:.98;letter-spacing:.01em}
+  .head .name .en{font-family:var(--mono);font-weight:700;font-size:12pt;letter-spacing:.18em;color:#8a8a92;margin-left:10px;text-transform:uppercase}
+  .head .one{font-size:12.5pt;margin-top:12px;color:#e9e6df}
+  .head .one b{color:var(--ember);font-weight:700}
+  .head .contact{font-family:var(--mono);font-size:9.5pt;letter-spacing:.02em;color:#9a9aa2;margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 20px}
+  .head .contact span{white-space:nowrap}
+  .head .contact b{color:#d8d8de;font-weight:400}
+  .head .bar{position:absolute;left:0;right:0;height:4px;background:var(--ember);bottom:0}
+
+  /* body */
+  .body{padding:10mm 18mm 12mm}
+  section{margin-top:9mm;break-inside:avoid}
+  section:first-child{margin-top:2mm}
+  h2{font-family:var(--display);font-weight:900;font-size:13pt;color:var(--ink);letter-spacing:.01em;
+    display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  h2::before{content:"";width:16px;height:4px;background:var(--ember);display:inline-block}
+  h2 .en{font-family:var(--mono);font-weight:400;font-size:8.5pt;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+
+  /* core wins */
+  .wins{display:flex;flex-direction:column;gap:7px}
+  .win{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:11pt}
+  .win .dot{font-family:var(--mono);color:var(--ember);font-weight:700;font-size:10pt}
+  .win b{color:var(--ink);font-weight:700}
+
+  /* jobs */
+  .job{margin-bottom:7mm;break-inside:avoid}
+  .job:last-child{margin-bottom:0}
+  .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .job .co{font-family:var(--display);font-weight:700;font-size:11.5pt;color:var(--ink)}
+  .job .co .role{font-weight:500;color:#3a3a40}
+  .job .when{font-family:var(--mono);font-size:9pt;color:var(--muted);white-space:nowrap}
+  .job ul{list-style:none;margin-top:6px}
+  .job li{position:relative;padding-left:16px;font-size:10.5pt;line-height:1.55;margin-top:4px;color:#2c2c32}
+  .job li::before{content:"";position:absolute;left:2px;top:.62em;width:5px;height:5px;background:var(--ember);}
+  .job li b{color:var(--ink);font-weight:700}
+
+  /* two-col compact rows (skills/edu/project) */
+  .kv{display:grid;grid-template-columns:88px 1fr;gap:6px 14px;font-size:10.5pt;line-height:1.5}
+  .kv .k{font-family:var(--mono);font-size:9pt;color:var(--muted);padding-top:1px}
+  .kv .v b{color:var(--ink);font-weight:700}
+  .proj .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .proj .nm{font-family:var(--display);font-weight:700;font-size:11pt}
+  .proj .meta{font-family:var(--mono);font-size:9pt;color:var(--ember);font-weight:700}
+  .proj p{font-size:10.5pt;color:#2c2c32;margin-top:4px;line-height:1.55}
+  .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .edu .sch{font-family:var(--display);font-weight:700;font-size:11pt}
+  .edu .sch span{font-weight:500;color:#3a3a40}
+  .edu .when{font-family:var(--mono);font-size:9pt;color:var(--muted)}
+
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+    color:#fff;background:var(--ink);padding:8px 14px;border-radius:4px;opacity:.86;letter-spacing:.04em}
+
+  @media screen and (max-width:740px){ .page{width:96vw;margin:12px auto} }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    html,body{background:#fff}
+    .page{width:210mm;min-height:297mm;margin:0;box-shadow:none}
+    .tip{display:none!important}
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section,.job,.win{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div class="name">江野<span class="en">JIANG YE</span></div>
+    <p class="one">六年后端 · 扛过日活千万的支付系统 · 最近在把 <b>AI 工程化</b>落到生产</p>
+    <div class="contact">
+      <span><b>杭州</b></span>
+      <span>138-0000-0000</span>
+      <span>jiangye.dev@example.com</span>
+      <span>github.com/jiangye</span>
+    </div>
+    <div class="bar"></div>
+  </header>
+
+  <main class="body">
+
+    <section>
+      <h2>核心成就 <span class="en">Highlights</span></h2>
+      <div class="wins">
+        <div class="win"><span class="dot">→</span><div>重构支付核心链路，成功率从 <b>98.1% 提到 99.6%</b>，一年少赔约 <b>200 万</b></div></div>
+        <div class="win"><span class="dot">→</span><div>把订单系统从单体拆成服务化，大促峰值扛住 <b>12 万 QPS</b>，再没崩过</div></div>
+        <div class="win"><span class="dot">→</span><div>从 0 组建 <b>8 人</b>后端团队，发布周期从两周压到 <b>两天</b></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作经历 <span class="en">Experience</span></h2>
+
+      <div class="job">
+        <div class="top">
+          <div class="co">某支付科技 <span class="role">· 后端技术专家</span></div>
+          <div class="when">2021.06 — 至今</div>
+        </div>
+        <ul>
+          <li>重构支付核心清结算链路，<b>成功率 98.1% → 99.6%</b>，按交易量折算一年少赔约 200 万</li>
+          <li>主导风控引擎重写，欺诈交易拦截准确率提到 <b>99.2%</b>，月均止损约 300 万</li>
+          <li>推动全链路压测常态化，连续 <b>4 个季度大促零事故</b></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <div class="co">某电商平台 <span class="role">· 高级后端工程师</span></div>
+          <div class="when">2018.07 — 2021.05</div>
+        </div>
+        <ul>
+          <li>把订单系统从单体拆成服务化架构，大促峰值 <b>12 万 QPS</b> 平稳，再没出过系统级故障</li>
+          <li>自研热点缓存中间件，核心商品接口 <b>P99 从 380ms 降到 45ms</b></li>
+          <li>带 3 人小组做履约调度优化，平均发货时效缩短 <b>26%</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proj">
+      <h2>开源 / 项目 <span class="en">Projects</span></h2>
+      <div class="top">
+        <div class="nm">go-ratelimit · 分布式限流库</div>
+        <div class="meta">★ 1.2k on GitHub</div>
+      </div>
+      <p>一个生产可用的 Go 分布式限流库，支持滑动窗口与令牌桶，已被多家公司接入线上网关。</p>
+    </section>
+
+    <section>
+      <h2>技能 <span class="en">Skills</span></h2>
+      <div class="kv">
+        <div class="k">语言</div><div class="v"><b>Go（精通）</b> · Java · Python · SQL</div>
+        <div class="k">中间件</div><div class="v">MySQL · Redis · Kafka · Kubernetes · gRPC</div>
+        <div class="k">方向</div><div class="v">高并发 · 支付清结算 · 风控 · AI 工程化</div>
+      </div>
+    </section>
+
+    <section class="edu">
+      <h2>教育 <span class="en">Education</span></h2>
+      <div class="top">
+        <div class="sch">某 985 大学 <span>· 计算机科学与技术 · 本科</span></div>
+        <div class="when">2014.09 — 2018.06</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF</div>
+<script>
+  // hide the print tip shortly so it never lingers; it's also hidden in @media print
+  setTimeout(function(){var t=document.getElementById('tip'); if(t) t.style.transition='opacity .6s', t.style.opacity='0';}, 4500);
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>沈砚之 · B 端产品经理 · 简历</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#16181d; --text:#23262d; --muted:#6b7079; --faint:#8b909a;
+    --line:#e2e4e8; --line-2:#c9ccd2; --paper:#ffffff;
+    --navy:#1f3a5f; --navy-soft:#2c4d77;
+    --display:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{font-family:var(--body);color:var(--text);background:#e9e9ec;line-height:1.5}
+
+  .page{width:210mm;min-height:297mm;margin:24px auto;background:var(--paper);
+    box-shadow:0 4px 30px rgba(0,0,0,.16);position:relative;overflow:hidden;
+    padding:17mm 18mm 14mm}
+
+  /* header */
+  .head{padding-bottom:6mm;border-bottom:1px solid var(--line);margin-bottom:6mm}
+  .head .nm-row{display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
+  .name{font-family:var(--display);font-weight:700;font-size:30pt;line-height:1;
+    color:var(--ink);letter-spacing:.005em;display:inline-block;
+    padding-bottom:6px;border-bottom:3px solid var(--navy)}
+  .name .en{font-family:var(--mono);font-weight:700;font-size:10pt;letter-spacing:.22em;
+    color:var(--faint);margin-left:12px;text-transform:uppercase;border:0}
+  .role-tag{font-family:var(--mono);font-size:8.5pt;letter-spacing:.16em;color:var(--navy);
+    text-transform:uppercase;font-weight:700;white-space:nowrap;padding-bottom:3px}
+  .one{font-size:11.5pt;margin-top:11px;color:#34383f;line-height:1.5;max-width:165mm}
+  .one b{color:var(--navy);font-weight:700}
+  .contact{font-family:var(--mono);font-size:9pt;letter-spacing:.01em;color:var(--muted);
+    margin-top:11px;display:flex;flex-wrap:wrap;gap:4px 22px}
+  .contact span{white-space:nowrap}
+  .contact b{color:#3a3e45;font-weight:400}
+
+  /* sections */
+  section{margin-top:6.5mm;break-inside:avoid}
+  h2{font-family:var(--display);font-weight:600;font-size:10.5pt;color:var(--navy);
+    letter-spacing:.06em;text-transform:uppercase;padding-bottom:5px;margin-bottom:9px;
+    border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:10px}
+  h2 .zh{font-family:var(--body);font-weight:700;font-size:11.5pt;color:var(--ink);
+    letter-spacing:.02em;text-transform:none}
+
+  /* highlights */
+  .wins{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+  .win{padding:0 14px;border-left:2px solid var(--navy)}
+  .win:first-child{padding-left:0;border-left:0}
+  .win .big{font-family:var(--display);font-weight:700;font-size:17pt;color:var(--navy);
+    line-height:1;letter-spacing:-.01em}
+  .win .cap{font-size:9.5pt;color:#3a3e45;line-height:1.45;margin-top:6px}
+  .win .cap b{color:var(--ink);font-weight:700}
+
+  /* jobs */
+  .job{margin-top:6mm;break-inside:avoid}
+  .job:first-of-type{margin-top:0}
+  .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .job .co{font-family:var(--display);font-weight:700;font-size:11pt;color:var(--ink)}
+  .job .co .role{font-family:var(--body);font-weight:500;color:#4a4e56;font-size:10.5pt}
+  .job .when{font-family:var(--mono);font-size:8.5pt;color:var(--muted);white-space:nowrap;letter-spacing:.01em}
+  .job ul{list-style:none;margin-top:6px}
+  .job li{position:relative;padding-left:15px;font-size:10pt;line-height:1.52;margin-top:4px;color:#2c2f36}
+  .job li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;
+    background:var(--navy);border-radius:50%}
+  .job li b{color:var(--ink);font-weight:700}
+
+  /* method / project */
+  .method{display:grid;grid-template-columns:1fr 1fr;gap:7px 22px}
+  .mrow{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:baseline;font-size:10pt;line-height:1.5}
+  .mrow .idx{font-family:var(--mono);font-size:9pt;color:var(--navy);font-weight:700}
+  .mrow b{color:var(--ink);font-weight:700}
+
+  /* skills */
+  .kv{display:grid;grid-template-columns:74px 1fr;gap:6px 16px;font-size:10pt;line-height:1.5}
+  .kv .k{font-family:var(--mono);font-size:8.5pt;color:var(--muted);padding-top:2px;letter-spacing:.02em}
+  .kv .v b{color:var(--ink);font-weight:700}
+
+  /* edu */
+  .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .edu .sch{font-family:var(--display);font-weight:700;font-size:10.5pt;color:var(--ink)}
+  .edu .sch span{font-family:var(--body);font-weight:500;color:#4a4e56;font-size:10pt}
+  .edu .when{font-family:var(--mono);font-size:8.5pt;color:var(--muted);white-space:nowrap}
+
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--mono);
+    font-size:11px;color:#fff;background:var(--navy);padding:8px 14px;border-radius:4px;
+    opacity:.9;letter-spacing:.04em}
+
+  @media screen and (max-width:740px){ .page{width:96vw;margin:12px auto;padding:8mm} }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    html,body{background:#fff}
+    .page{width:210mm;min-height:297mm;margin:0;box-shadow:none;padding:17mm 18mm 14mm}
+    .tip{display:none!important}
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section,.job,.win,.head{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div class="nm-row">
+      <div class="name">沈砚之<span class="en">SHEN YANZHI</span></div>
+      <div class="role-tag">B 端产品经理 / Product Manager</div>
+    </div>
+    <p class="one">八年 B 端产品 · 从 0 带过两条<b>百万 ARR</b>产品线 · 擅长把模糊需求拆成能交付的东西</p>
+    <div class="contact">
+      <span><b>上海</b></span>
+      <span>138-0000-0000</span>
+      <span>shenyanzhi@example.com</span>
+      <span>shenyanzhi.work</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>核心成就 <span class="zh">Highlights</span></h2>
+    <div class="wins">
+      <div class="win">
+        <div class="big">¥1,200 万</div>
+        <div class="cap">从 0 搭起的客服 SaaS，<b>3 年做到 1,200 万 ARR</b>，续费率 <b>91%</b></div>
+      </div>
+      <div class="win">
+        <div class="big">+34%</div>
+        <div class="cap">重做开通流程，新客 7 日激活率<b>从 41% 提到 75%</b></div>
+      </div>
+      <div class="win">
+        <div class="big">−40%</div>
+        <div class="cap">推动需求评审标准化，<b>无效返工工时降 40%</b>，交付周期缩到两周</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>工作经历 <span class="zh">Experience</span></h2>
+
+    <div class="job">
+      <div class="top">
+        <div class="co">某企业服务公司 <span class="role">· 高级产品经理 / 产品线负责人</span></div>
+        <div class="when">2021.03 — 至今</div>
+      </div>
+      <ul>
+        <li>从 0 立项做客服 SaaS，定方向、搭团队、跑商业化，<b>3 年做到 1,200 万 ARR</b>，年续费率稳在 91%</li>
+        <li>重做账号开通与首日引导，新客 7 日激活率<b>从 41% 提到 75%</b>，付费转化提升 1.6 倍</li>
+        <li>带 6 人产研小组落地工单 AI 分流，人工首响时长<b>从 12 分钟压到 3 分钟</b>，客单坐席成本降 28%</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="top">
+        <div class="co">某 SaaS 平台 <span class="role">· 产品经理</span></div>
+        <div class="when">2017.07 — 2021.02</div>
+      </div>
+      <ul>
+        <li>独立负责数据看板从 0 到 1，上线 14 个月<b>付费客户做到 800 家</b>，贡献年营收约 480 万</li>
+        <li>推动需求评审与验收标准化，把无效返工工时<b>降了 40%</b>，平均交付周期从五周缩到两周</li>
+        <li>主导计费体系改版，按量计费替换包年套餐，老客户人均年消费<b>提升 35%</b>，回款周期缩短 22 天</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>核心方法 <span class="zh">How I Work</span></h2>
+    <div class="method">
+      <div class="mrow"><span class="idx">01</span><div><b>需求拆解</b>：把客户一句话模糊诉求拆成可交付的最小闭环，3 年踩坑沉淀成一套评审清单，被全组复用</div></div>
+      <div class="mrow"><span class="idx">02</span><div><b>数据驱动</b>：每个版本带可量化北极星指标上线，靠埋点和漏斗定位流失，砍掉过半伪需求</div></div>
+      <div class="mrow"><span class="idx">03</span><div><b>商业化</b>：从定价、计费到续费全链路操盘过，懂怎么让一条产品线从能用走到能赚钱</div></div>
+      <div class="mrow"><span class="idx">04</span><div><b>跨团队推动</b>：带过研发、销售、客服三方拉齐目标，靠对齐而非堆会把项目按期交付</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>技能 <span class="zh">Skills</span></h2>
+    <div class="kv">
+      <div class="k">产品</div><div class="v"><b>B 端产品设计</b> · 需求拆解 · 商业化定价 · 数据分析 · 用户访谈</div>
+      <div class="k">工具</div><div class="v">Figma · Axure · SQL · Tableau · GrowingIO · Jira</div>
+      <div class="k">方向</div><div class="v">SaaS · 客服系统 · 数据产品 · AI 工程化落地</div>
+    </div>
+  </section>
+
+  <section class="edu">
+    <h2>教育 <span class="zh">Education</span></h2>
+    <div class="top">
+      <div class="sch">某 985 大学 <span>· 信息管理与信息系统 · 本科</span></div>
+      <div class="when">2013.09 — 2017.06</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF</div>
+<script>
+  setTimeout(function(){var t=document.getElementById('tip'); if(t){t.style.transition='opacity .6s'; t.style.opacity='0';}}, 4500);
+</script>
+</body>
+</html>

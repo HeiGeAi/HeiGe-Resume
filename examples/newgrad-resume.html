@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>林知遥 · 计算机应届 · 简历</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#2a2622; --text:#3a352f; --soft:#6f665d; --muted:#8b837a; --faint:#a39a90;
+    --line:#ece4da; --paper:#ffffff;
+    --warm:#f08a4b; --warm-deep:#d9722f; --warm-wash:#fdf3ea;
+    --display:"Nunito Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --body:"Nunito Sans","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{font-family:var(--body);color:var(--text);background:#ece9e4;line-height:1.6}
+
+  .page{width:210mm;min-height:297mm;margin:24px auto;background:var(--paper);
+    box-shadow:0 4px 30px rgba(0,0,0,.14);position:relative;overflow:hidden}
+
+  /* header — calm, no dark band */
+  .head{padding:18mm 20mm 0}
+  .head .name{font-family:var(--display);font-weight:900;font-size:34pt;line-height:1;
+    color:var(--ink);letter-spacing:.005em}
+  .head .name .en{font-family:var(--display);font-weight:600;font-size:11pt;letter-spacing:.16em;
+    color:var(--faint);margin-left:12px;text-transform:uppercase;vertical-align:1pt}
+  .head .one{font-size:12pt;margin-top:14px;color:var(--soft);max-width:170mm}
+  .head .one b{color:var(--warm-deep);font-weight:700}
+  .head .contact{font-size:10pt;color:var(--muted);margin-top:14px;
+    display:flex;flex-wrap:wrap;gap:5px 22px}
+  .head .contact span{white-space:nowrap}
+  .head .contact b{color:var(--text);font-weight:600}
+  .head .rule{height:2px;background:var(--line);margin:16px 0 0}
+
+  /* body */
+  .body{padding:6mm 20mm 10mm}
+  section{margin-top:5.5mm;break-inside:avoid}
+  section:first-child{margin-top:4mm}
+  h2{font-family:var(--display);font-weight:900;font-size:13pt;color:var(--ink);
+    letter-spacing:.01em;display:flex;align-items:center;gap:10px;margin-bottom:11px}
+  h2::before{content:"";width:14px;height:14px;border-radius:50%;
+    background:var(--warm);display:inline-block;flex:0 0 auto}
+  h2 .en{font-family:var(--display);font-weight:600;font-size:8.5pt;color:var(--faint);
+    letter-spacing:.14em;text-transform:uppercase}
+
+  /* projects */
+  .proj{margin-bottom:4.5mm;break-inside:avoid}
+  .proj:last-child{margin-bottom:0}
+  .proj .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .proj .nm{font-family:var(--display);font-weight:700;font-size:11.5pt;color:var(--ink)}
+  .proj .nm .role{font-weight:600;color:var(--muted);font-size:10.5pt}
+  .proj .meta{font-size:9.5pt;color:var(--warm-deep);font-weight:700;white-space:nowrap}
+  .proj .stack{font-size:9pt;color:var(--muted);margin-top:3px;letter-spacing:.01em}
+  .proj ul{list-style:none;margin-top:6px}
+  .proj li{position:relative;padding-left:16px;font-size:10.5pt;line-height:1.55;
+    margin-top:4px;color:var(--text)}
+  .proj li::before{content:"";position:absolute;left:2px;top:.66em;width:5px;height:5px;
+    border-radius:50%;background:var(--warm)}
+  .proj li b{color:var(--ink);font-weight:700}
+
+  /* education */
+  .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .edu .sch{font-family:var(--display);font-weight:700;font-size:11.5pt;color:var(--ink)}
+  .edu .sch span{font-weight:600;color:var(--muted);font-size:10.5pt}
+  .edu .when{font-size:9.5pt;color:var(--muted);white-space:nowrap}
+  .edu .detail{font-size:10pt;color:var(--soft);margin-top:5px}
+  .edu .detail b{color:var(--warm-deep);font-weight:700}
+
+  /* skills + awards: light key-value */
+  .kv{display:grid;grid-template-columns:74px 1fr;gap:7px 16px;font-size:10.5pt;line-height:1.55}
+  .kv .k{font-size:9.5pt;color:var(--muted);padding-top:1px;font-weight:600}
+  .kv .v b{color:var(--ink);font-weight:700}
+
+  .awards{display:flex;flex-direction:column;gap:6px}
+  .award{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:baseline;font-size:10.5pt}
+  .award .dot{color:var(--warm);font-weight:900;font-size:9pt;line-height:1.7}
+  .award b{color:var(--ink);font-weight:700}
+
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--display);
+    font-size:11px;color:#fff;background:var(--warm-deep);padding:8px 15px;border-radius:20px;
+    opacity:.9;letter-spacing:.02em;font-weight:600}
+
+  @media screen and (max-width:740px){ .page{width:96vw;margin:12px auto} }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    html,body{background:#fff}
+    .page{width:210mm;min-height:297mm;margin:0;box-shadow:none}
+    .tip{display:none!important}
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section,.proj,.edu,.award{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div class="name">林知遥<span class="en">Lin Zhiyao</span></div>
+    <p class="one">计算机应届 · 一个人写过一个 <b>两万用户</b>的小工具 · 想找能快速上手真实项目的团队</p>
+    <div class="contact">
+      <span><b>南京</b> · 应届可全职</span>
+      <span>138-0000-0000</span>
+      <span>linzhiyao@example.com</span>
+      <span>github.com/linzhiyao</span>
+    </div>
+    <div class="rule"></div>
+  </header>
+
+  <main class="body">
+
+    <section class="proj">
+      <h2>项目经历 <span class="en">Projects</span></h2>
+
+      <div class="proj">
+        <div class="top">
+          <div class="nm">课表助手 <span class="role">· 独立开发 · 小程序</span></div>
+          <div class="meta">两万用户</div>
+        </div>
+        <div class="stack">Vue · Node.js · MySQL · 微信小程序</div>
+        <ul>
+          <li>一个人从需求到上线做完，帮学生把分散的课表、空教室、考试安排合到一处，半年自然增长到 <b>两万用户</b></li>
+          <li>把首页加载从 <b>1.4s 优化到 0.5s</b>，靠的是接口合并加本地缓存，没加机器</li>
+          <li>留存自己看数据迭代，次周留存做到 <b>41%</b>，被三所学校的学生群自发转发</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="top">
+          <div class="nm">轻量博客引擎 <span class="role">· 开源</span></div>
+          <div class="meta">GitHub 200 star</div>
+        </div>
+        <div class="stack">Go · SQLite · Docker</div>
+        <ul>
+          <li>用 Go 写的单文件静态博客引擎，一条命令部署，<b>GitHub 攒到 200 star</b>，合并过 9 个外部 PR</li>
+          <li>重写渲染管线，千篇文章构建 <b>从 12s 降到 3s</b>，被几个独立开发者拿去搭了自己的站</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proj">
+      <h2>实习 <span class="en">Internship</span></h2>
+      <div class="proj">
+        <div class="top">
+          <div class="nm">某科技公司 <span class="role">· 后端开发实习</span></div>
+          <div class="meta">2025.07 — 2025.09</div>
+        </div>
+        <ul>
+          <li>独立接了订单查询接口的优化，加二级缓存加索引，<b>P99 从 320ms 降到 80ms</b>，已上线</li>
+          <li>顺手补了一套接口自动化测试，把回归从手点 <b>半天压到 10 分钟</b>，被团队留下来一直用</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="edu">
+      <h2>教育 <span class="en">Education</span></h2>
+      <div class="top">
+        <div class="sch">某 211 大学 <span>· 计算机科学与技术 · 本科</span></div>
+        <div class="when">2022.09 — 2026.06</div>
+      </div>
+      <div class="detail">GPA <b>3.8 / 4.0</b> · 专业排名前 <b>10%</b> · 主修数据结构、操作系统、数据库、计算机网络</div>
+    </section>
+
+    <section>
+      <h2>技能 <span class="en">Skills</span></h2>
+      <div class="kv">
+        <div class="k">语言</div><div class="v"><b>Go · JavaScript</b> · Python · SQL</div>
+        <div class="k">后端</div><div class="v">Node.js · Gin · MySQL · Redis · Docker</div>
+        <div class="k">前端</div><div class="v">Vue · 微信小程序 · HTML / CSS</div>
+        <div class="k">工程</div><div class="v">Git · Linux · 接口测试 · 性能调优</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>获奖 / 开源 <span class="en">Awards</span></h2>
+      <div class="awards">
+        <div class="award"><span class="dot">●</span><div>校级程序设计大赛 <b>一等奖</b>（2024）</div></div>
+        <div class="award"><span class="dot">●</span><div>开源项目轻量博客引擎累计 <b>200 star</b>，长期维护中</div></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF</div>
+<script>
+  setTimeout(function(){var t=document.getElementById('tip'); if(t){t.style.transition='opacity .6s'; t.style.opacity='0';}}, 4500);
+</script>
+</body>
+</html>

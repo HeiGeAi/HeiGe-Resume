@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>沈砚 · 资深产品设计师 · 简历</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#16141a; --paper:#ffffff; --text:#1d1b22;
+    --muted:#6c6a76; --line:#e8e6ec;
+    --coral:#ff5a5f; --coral-deep:#e8484d; --cream:#fff3f1;
+    --display:"Sora","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{font-family:var(--body);color:var(--text);background:#e9e9ec;line-height:1.5}
+
+  .page{width:210mm;min-height:297mm;margin:24px auto;background:var(--paper);
+    box-shadow:0 4px 30px rgba(0,0,0,.18);position:relative;overflow:hidden}
+
+  /* coral header band with geometric accents */
+  .head{background:var(--coral);color:#fff;padding:16mm 18mm 11mm;position:relative;overflow:hidden}
+  .head .glyph{position:absolute;right:-14mm;top:-14mm;width:60mm;height:60mm;border-radius:50%;
+    background:rgba(255,255,255,.12)}
+  .head .glyph2{position:absolute;right:14mm;bottom:-10mm;width:30mm;height:30mm;
+    border:3px solid rgba(255,255,255,.22)}
+  .head .inner{position:relative;z-index:2}
+  .head .name{font-family:var(--display);font-weight:800;font-size:40pt;line-height:1;letter-spacing:.01em}
+  .head .name .en{font-family:var(--mono);font-weight:700;font-size:11pt;letter-spacing:.2em;
+    color:rgba(255,255,255,.78);margin-left:12px;text-transform:uppercase}
+  .head .one{font-size:12pt;margin-top:13px;color:#fff;font-weight:500;max-width:155mm}
+  .head .one b{font-weight:700;background:rgba(255,255,255,.22);padding:1px 6px;border-radius:3px}
+  .head .contact{font-family:var(--mono);font-size:9.5pt;letter-spacing:.01em;
+    color:rgba(255,255,255,.92);margin-top:15px;display:flex;flex-wrap:wrap;gap:6px 18px}
+  .head .contact span{white-space:nowrap}
+
+  /* body */
+  .body{padding:11mm 18mm 13mm}
+  section{margin-top:8.5mm;break-inside:avoid}
+  section:first-child{margin-top:1mm}
+  h2{font-family:var(--display);font-weight:800;font-size:13pt;color:var(--ink);letter-spacing:.01em;
+    display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  h2::before{content:"";width:14px;height:14px;background:var(--coral);
+    border-radius:50%;display:inline-block;flex:none}
+  h2 .en{font-family:var(--mono);font-weight:400;font-size:8.5pt;color:var(--muted);
+    letter-spacing:.16em;text-transform:uppercase}
+
+  /* core wins */
+  .wins{display:flex;flex-direction:column;gap:7px}
+  .win{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:11pt;line-height:1.5}
+  .win .dot{font-family:var(--mono);color:var(--coral-deep);font-weight:700;font-size:11pt}
+  .win b{color:var(--ink);font-weight:700}
+
+  /* jobs */
+  .job{margin-bottom:6.5mm;break-inside:avoid}
+  .job:last-child{margin-bottom:0}
+  .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .job .co{font-family:var(--display);font-weight:700;font-size:11.5pt;color:var(--ink)}
+  .job .co .role{font-weight:500;color:#46444e}
+  .job .when{font-family:var(--mono);font-size:9pt;color:var(--muted);white-space:nowrap}
+  .job ul{list-style:none;margin-top:6px}
+  .job li{position:relative;padding-left:16px;font-size:10.5pt;line-height:1.55;margin-top:4px;color:#2c2a32}
+  .job li::before{content:"";position:absolute;left:2px;top:.55em;width:6px;height:6px;
+    background:var(--coral);border-radius:50%}
+  .job li b{color:var(--ink);font-weight:700}
+
+  /* project */
+  .proj .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .proj .nm{font-family:var(--display);font-weight:700;font-size:11pt;color:var(--ink)}
+  .proj .meta{font-family:var(--mono);font-size:9pt;color:var(--coral-deep);font-weight:700;white-space:nowrap}
+  .proj p{font-size:10.5pt;color:#2c2a32;margin-top:4px;line-height:1.55}
+  .proj p b{color:var(--ink);font-weight:700}
+
+  /* skills + edu key-value */
+  .kv{display:grid;grid-template-columns:80px 1fr;gap:6px 14px;font-size:10.5pt;line-height:1.5}
+  .kv .k{font-family:var(--mono);font-size:9pt;color:var(--muted);padding-top:1px}
+  .kv .v b{color:var(--ink);font-weight:700}
+  .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .edu .sch{font-family:var(--display);font-weight:700;font-size:11pt;color:var(--ink)}
+  .edu .sch span{font-weight:500;color:#46444e}
+  .edu .when{font-family:var(--mono);font-size:9pt;color:var(--muted);white-space:nowrap}
+
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+    color:#fff;background:var(--ink);padding:8px 14px;border-radius:4px;opacity:.86;letter-spacing:.04em}
+
+  @media screen and (max-width:740px){ .page{width:96vw;margin:12px auto} }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    html,body{background:#fff}
+    .page{width:210mm;min-height:297mm;margin:0;box-shadow:none}
+    .tip{display:none!important}
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section,.job,.win,.proj,.edu{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div class="glyph"></div>
+    <div class="glyph2"></div>
+    <div class="inner">
+      <div class="name">沈砚<span class="en">SHEN YAN</span></div>
+      <p class="one">六年产品设计 · 主导过两款千万级 App 改版 · 能把<b>复杂流程做简单</b></p>
+      <div class="contact">
+        <span>上海</span>
+        <span>138-0000-0000</span>
+        <span>shenyan.design@example.com</span>
+        <span>shenyan.design/work</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="body">
+
+    <section>
+      <h2>核心成就 <span class="en">Highlights</span></h2>
+      <div class="wins">
+        <div class="win"><span class="dot">/01</span><div>主导某出行 App 下单流程改版，关键转化率从 <b>61% 提到 78%</b>，次月留存涨 <b>9 个百分点</b></div></div>
+        <div class="win"><span class="dot">/02</span><div>从 0 搭起设计系统，覆盖 <b>4 条产品线</b>，设计走查通过率从 64% 提到 <b>96%</b>，复用率超 80%</div></div>
+        <div class="win"><span class="dot">/03</span><div>带 <b>5 人</b>设计小组做体验重塑，产品 NPS 从 32 提到 <b>58</b>，App Store 评分升到 <b>4.8</b></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作经历 <span class="en">Experience</span></h2>
+
+      <div class="job">
+        <div class="top">
+          <div class="co">某出行科技 <span class="role">· 高级产品设计师 / 设计组长</span></div>
+          <div class="when">2021.04 — 至今</div>
+        </div>
+        <ul>
+          <li>重做核心下单到支付链路，关键转化率 <b>61% → 78%</b>，按日单量折算月增订单约 <b>40 万</b></li>
+          <li>从 0 建设计系统，沉淀 <b>120+ 组件</b>，新需求出图提速 <b>50%</b>，被 4 条产品线复用</li>
+          <li>主导一次品牌焕新与全端动效规范，关键页加载体感优化后跳出率降 <b>22%</b></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <div class="co">某社交平台 <span class="role">· 产品设计师</span></div>
+          <div class="when">2018.07 — 2021.03</div>
+        </div>
+        <ul>
+          <li>牵头内容信息流改版，单用户日均停留时长拉长 <b>18%</b>，互动率提升 <b>26%</b></li>
+          <li>带 1 人做新人引导重设计，注册到首次发布转化从 43% 提到 <b>67%</b></li>
+          <li>建立可用性测试流程，每月跑 <b>8 场</b>用研，上线前拦下 <b>30+ 个</b>体验问题</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proj">
+      <h2>项目 / 作品 <span class="en">Projects</span></h2>
+      <div class="top">
+        <div class="nm">一目 · 老年版理财 App 体验设计</div>
+        <div class="meta">作品集 → shenyan.design/work</div>
+      </div>
+      <p>独立完成的适老化改版方案，把 7 步开户砍到 <b>3 步</b>，60 岁以上用户完成率从 38% 提到 <b>81%</b>，<b>获 2023 红点设计奖</b>。</p>
+    </section>
+
+    <section>
+      <h2>技能 <span class="en">Skills</span></h2>
+      <div class="kv">
+        <div class="k">工具</div><div class="v"><b>Figma（精通）</b> · Sketch · Principle · Protopie · After Effects</div>
+        <div class="k">设计</div><div class="v">设计系统 · 交互动效 · 用户研究 · 数据驱动设计 · 走查规范</div>
+        <div class="k">方向</div><div class="v">复杂流程简化 · 0→1 产品体验 · 适老化 · B 端效率工具</div>
+      </div>
+    </section>
+
+    <section class="edu">
+      <h2>教育 <span class="en">Education</span></h2>
+      <div class="top">
+        <div class="sch">某美术学院 <span>· 视觉传达设计 · 本科</span></div>
+        <div class="when">2014.09 — 2018.06</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF</div>
+<script>
+  setTimeout(function(){var t=document.getElementById('tip'); if(t){t.style.transition='opacity .6s'; t.style.opacity='0';}}, 4500);
+</script>
+</body>
+</html>

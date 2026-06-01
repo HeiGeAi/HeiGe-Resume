@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>沈砚清 · 首席技术官 CTO · 简历</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#14233b;          /* 墨蓝 */
+    --ink-soft:#2c3a52;
+    --paper:#fbfaf6;        /* warm off-white */
+    --paper-pure:#ffffff;
+    --text:#23272e;
+    --muted:#6e6a60;
+    --line:#ddd8cc;
+    --line-soft:#ebe7dc;
+    --gold:#9a7b3f;         /* restraint gold */
+    --serif-en:"Playfair Display","Noto Serif SC","Songti SC","SimSun",serif;
+    --serif:"Noto Serif SC","Songti SC","SimSun",serif;
+    --sans-en:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{font-family:var(--sans);color:var(--text);background:#e7e6e1;line-height:1.55}
+
+  .page{width:210mm;min-height:297mm;margin:24px auto;background:var(--paper);
+    box-shadow:0 6px 36px rgba(20,35,59,.16);position:relative;overflow:hidden}
+  .page + .page{margin-top:0}
+
+  /* ===== Header ===== */
+  .head{padding:24mm 20mm 0}
+  .eyebrow{font-family:var(--sans-en);font-size:8.5pt;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px}
+  .name{font-family:var(--serif);font-weight:600;font-size:38pt;line-height:1.02;color:var(--ink);
+    letter-spacing:.04em}
+  .name .en{font-family:var(--serif-en);font-weight:500;font-size:13pt;letter-spacing:.22em;
+    color:var(--muted);display:block;margin-top:10px;text-transform:uppercase}
+  .one{font-size:11.5pt;color:var(--ink-soft);margin-top:18px;line-height:1.75;max-width:158mm;
+    font-weight:400}
+  .one b{color:var(--ink);font-weight:700}
+  .rule{height:1px;background:var(--line);margin:18px 0 0}
+  .contact{display:flex;flex-wrap:wrap;gap:7px 0;margin-top:14px;font-family:var(--sans-en);
+    font-size:9.5pt;color:var(--ink-soft);letter-spacing:.01em}
+  .contact span{position:relative;padding:0 16px}
+  .contact span:first-child{padding-left:0}
+  .contact span + span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+    width:1px;height:11px;background:var(--line)}
+
+  /* ===== Body ===== */
+  .body{padding:11mm 20mm 16mm}
+  section{margin-top:9mm;break-inside:avoid}
+  section:first-child{margin-top:0}
+  h2{font-family:var(--serif);font-weight:600;font-size:13.5pt;color:var(--ink);letter-spacing:.06em;
+    display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+  h2 .en{font-family:var(--sans-en);font-weight:600;font-size:7.5pt;color:var(--gold);
+    letter-spacing:.32em;text-transform:uppercase}
+  h2::after{content:"";flex:1;height:1px;background:var(--line-soft);align-self:center}
+
+  /* core wins / executive summary */
+  .wins{display:flex;flex-direction:column;gap:11px}
+  .win{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:baseline;font-size:11pt;
+    line-height:1.62}
+  .win .mk{font-family:var(--serif-en);color:var(--gold);font-size:11pt;font-weight:600;line-height:1}
+  .win b{color:var(--ink);font-weight:700}
+
+  /* jobs */
+  .job{margin-bottom:8mm;break-inside:avoid}
+  .job:last-child{margin-bottom:0}
+  .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .job .co{font-family:var(--serif);font-weight:600;font-size:12.5pt;color:var(--ink);letter-spacing:.02em}
+  .job .role{font-family:var(--sans);font-weight:500;font-size:10.5pt;color:var(--ink-soft);
+    margin-top:3px}
+  .job .when{font-family:var(--sans-en);font-size:9pt;color:var(--muted);white-space:nowrap;
+    letter-spacing:.04em}
+  .job ul{list-style:none;margin-top:9px}
+  .job li{position:relative;padding-left:18px;font-size:10.5pt;line-height:1.62;margin-top:6px;
+    color:#34373d}
+  .job li::before{content:"";position:absolute;left:0;top:.66em;width:6px;height:1px;background:var(--gold)}
+  .job li b{color:var(--ink);font-weight:700}
+  .job .tag{font-family:var(--sans-en);font-size:8pt;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-right:7px}
+
+  /* boardroom / external highlights */
+  .board{display:grid;grid-template-columns:1fr 1fr;gap:9px 26px}
+  .board .item{font-size:10.5pt;line-height:1.6;color:#34373d;position:relative;padding-left:16px}
+  .board .item::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;
+    border:1px solid var(--gold);border-radius:50%}
+  .board .item b{color:var(--ink);font-weight:700}
+
+  /* skills */
+  .kv{display:grid;grid-template-columns:96px 1fr;gap:9px 18px;font-size:10.5pt;line-height:1.6}
+  .kv .k{font-family:var(--sans-en);font-size:8.5pt;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;padding-top:3px}
+  .kv .v{color:#34373d}
+  .kv .v b{color:var(--ink);font-weight:700}
+
+  /* education */
+  .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+  .edu .sch{font-family:var(--serif);font-weight:600;font-size:11.5pt;color:var(--ink)}
+  .edu .sch span{font-family:var(--sans);font-weight:500;font-size:10pt;color:var(--ink-soft)}
+  .edu .when{font-family:var(--sans-en);font-size:9pt;color:var(--muted);letter-spacing:.04em}
+  .edu p{font-size:10pt;color:var(--muted);margin-top:4px}
+
+  .pagefoot{position:absolute;bottom:11mm;left:20mm;right:20mm;display:flex;
+    justify-content:space-between;align-items:center;font-family:var(--sans-en);font-size:8pt;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .pagefoot::before{content:"";position:absolute;top:-9px;left:0;right:0;height:1px;background:var(--line-soft)}
+
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--sans-en);
+    font-size:11px;color:var(--paper);background:var(--ink);padding:8px 16px;border-radius:3px;
+    opacity:.9;letter-spacing:.08em}
+
+  @media screen and (max-width:740px){ .page{width:96vw;margin:12px auto} }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    html,body{background:#fff}
+    .page{width:210mm;min-height:297mm;height:297mm;margin:0;box-shadow:none;background:var(--paper)}
+    .tip{display:none!important}
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section,.job,.win,.edu{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 (self-sufficient) ============ -->
+<div class="page">
+  <header class="head">
+    <div class="eyebrow">Chief Technology Officer</div>
+    <div class="name">沈砚清<span class="en">Shen Yanqing</span></div>
+    <p class="one">十五年技术管理 · 带过 <b>200 人</b>研发 · 把一家公司的系统从单体扛到 <b>日订单千万</b>，营收从 <b>2 亿做到 9 亿</b></p>
+    <div class="rule"></div>
+    <div class="contact">
+      <span>上海</span>
+      <span>138-0000-0000</span>
+      <span>yanqing.shen@example.com</span>
+      <span>现任 CTO · 可议高管/技术合伙人岗</span>
+    </div>
+  </header>
+
+  <main class="body">
+
+    <section>
+      <h2>核心成就 <span class="en">Executive Summary</span></h2>
+      <div class="wins">
+        <div class="win"><span class="mk">I.</span><div>担任 CTO 四年，主导技术驱动的增长路线，公司营收从 <b>2 亿做到 9 亿</b>，毛利率提升 <b>11 个百分点</b></div></div>
+        <div class="win"><span class="mk">II.</span><div>把研发组织从 <b>20 人扩到 200 人</b>，亲手招到 <b>3 位技术总监</b>，建起职级、晋升与绩效体系，核心团队三年零流失</div></div>
+        <div class="win"><span class="mk">III.</span><div>带队把交易系统从单体重构为服务化中台，平稳扛住 <b>日订单千万</b>、大促峰值 <b>50 万 QPS</b>，连续三年大促零事故</div></div>
+        <div class="win"><span class="mk">IV.</span><div>押注 AI 工程化，落地智能客服与履约调度，每年节省人力与运营成本约 <b>4000 万</b></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作经历 <span class="en">Experience</span></h2>
+
+      <div class="job">
+        <div class="top">
+          <div>
+            <div class="co">某零售科技集团</div>
+            <div class="role">首席技术官 CTO · 向 CEO 与董事会汇报</div>
+          </div>
+          <div class="when">2021.03 — 至今</div>
+        </div>
+        <ul>
+          <li><span class="tag">业务</span>主导技术与数据驱动的增长策略，三年营收 <b>2 亿 → 9 亿</b>，技术投入占营收比反而下降 <b>3 个点</b></li>
+          <li><span class="tag">组织</span>研发团队从 <b>20 人扩到 200 人</b>，搭建职级体系与技术晋升通道，招到并留住 <b>3 位技术总监</b>，核心骨干三年零流失</li>
+          <li><span class="tag">规模</span>带队完成交易中台服务化重构，系统从单体扛到 <b>日订单千万</b>，大促峰值 <b>50 万 QPS</b>，连续三年零事故</li>
+          <li><span class="tag">战略</span>提前一年押注 AI 工程化，自建模型平台落地智能客服与智能履约，年省成本约 <b>4000 万</b></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <div>
+            <div class="co">某电商平台</div>
+            <div class="role">技术副总裁 VP Engineering</div>
+          </div>
+          <div class="when">2016.05 — 2021.02</div>
+        </div>
+        <ul>
+          <li><span class="tag">业务</span>负责全平台技术，支撑 GMV 从 <b>30 亿涨到 120 亿</b>，系统可用性常年 <b>99.99%</b></li>
+          <li><span class="tag">组织</span>组建中台与基础架构两大部门共 <b>80 余人</b>，把平均发布周期从两周压到 <b>一天两发</b></li>
+          <li><span class="tag">规模</span>主导数据库分库分表与多活容灾，单库瓶颈彻底解除，大促订单峰值承载提升 <b>8 倍</b></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <div>
+            <div class="co">某互联网公司</div>
+            <div class="role">技术总监 · 后端负责人</div>
+          </div>
+          <div class="when">2011.07 — 2016.04</div>
+        </div>
+        <ul>
+          <li><span class="tag">规模</span>从 0 搭起核心交易与支付链路，支撑用户从百万级做到 <b>5000 万</b>，奠定后续平台化底座</li>
+          <li><span class="tag">组织</span>从 <b>3 人带到 30 人</b>研发团队，建立代码评审与上线规范，事故率下降 <b>70%</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="pagefoot"><span>沈砚清 · Shen Yanqing</span><span>Page 1 / 2</span></div>
+  </main>
+</div>
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page">
+  <main class="body" style="padding-top:24mm">
+
+    <section>
+      <h2>董事会与对外 <span class="en">Boardroom &amp; External</span></h2>
+      <div class="board">
+        <div class="item">作为技术负责人参与公司 <b>B 轮与 C 轮融资</b>，主讲技术尽调，累计融资约 <b>6 亿</b></div>
+        <div class="item">向董事会牵头制定三年技术战略，连续两年通过年度技术预算 <b>逾 1.2 亿</b></div>
+        <div class="item">主导两次技术并购的尽调与整合，半年内完成 <b>两支团队</b>的系统与人员融合</div>
+        <div class="item">受邀在多场行业大会做技术分享，公司技术品牌帮助年校招到岗 <b>提升 3 倍</b></div>
+        <div class="item">推动数据合规与安全体系落地，通过 <b>等保三级</b>与多项安全审计，零重大数据事故</div>
+        <div class="item">建立与三家云厂商的战略合作，把基础设施成本年降 <b>约 2200 万</b></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>技术领导力与领域 <span class="en">Leadership &amp; Domains</span></h2>
+      <div class="kv">
+        <div class="k">技术领导</div><div class="v"><b>技术战略与路线规划</b> · 研发效能 · 技术预算与成本治理 · 向董事会汇报与融资尽调</div>
+        <div class="k">组织建设</div><div class="v"><b>研发团队从 20 到 200 的扩张</b> · 职级与晋升体系 · 总监级招聘与梯队培养 · 文化与留存</div>
+        <div class="k">架构</div><div class="v"><b>高并发交易系统</b> · 服务化中台 · 多活容灾 · 数据库分库分表 · 稳定性与容量治理</div>
+        <div class="k">方向</div><div class="v">支付清结算 · AI 工程化与模型平台 · 数据合规与安全 · 云成本优化</div>
+      </div>
+    </section>
+
+    <section class="edu">
+      <h2>教育 <span class="en">Education</span></h2>
+      <div class="top">
+        <div class="sch">某 985 高校 <span>· 计算机科学与技术 · 硕士</span></div>
+        <div class="when">2008.09 — 2011.06</div>
+      </div>
+      <div class="top" style="margin-top:9px">
+        <div class="sch">某 985 高校 <span>· 计算机科学与技术 · 本科</span></div>
+        <div class="when">2004.09 — 2008.06</div>
+      </div>
+      <p>在校期间主攻分布式系统方向，发表两篇会议论文。</p>
+    </section>
+
+    <div class="pagefoot"><span>沈砚清 · Shen Yanqing</span><span>Page 2 / 2</span></div>
+  </main>
+</div>
+
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF · A4 两页</div>
+<script>
+  setTimeout(function(){var t=document.getElementById('tip'); if(t){t.style.transition='opacity .6s'; t.style.opacity='0';}}, 4500);
+</script>
+</body>
+</html>
