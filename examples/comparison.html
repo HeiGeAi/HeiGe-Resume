@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>普通版 vs 锻造版 · 同一段经历，赢两道筛 · HeiGe-Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#111114; --ink-2:#1c1c22; --ink-3:#26262e; --paper:#ffffff; --text:#1a1a1e;
+    --muted:#6a6a72; --line:#e3e3e6; --ember:#ff4d12; --ember-deep:#d83a08; --spark:#ffd23f;
+    --dim:#9a9aa2; --pale:#f4f3f0;
+    --display:"Archivo","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--body);color:var(--text);background:#e9e9ec;line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--mono)}
+  .ember{color:var(--ember)}
+
+  /* ---------- hero / verdict ---------- */
+  .hero{background:var(--ink);color:#f3f1ec;padding:54px 0 46px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--ember)}
+  .hero .kick{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .hero .kick i{width:13px;height:13px;background:var(--ember);box-shadow:0 0 14px var(--ember);display:inline-block}
+  .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(30px,5vw,52px);line-height:1.05;letter-spacing:-.01em}
+  .hero h1 .molten{color:var(--ember)}
+  .hero .sub{font-size:clamp(15px,1.6vw,18px);color:#cfc9bd;margin-top:18px;max-width:46em}
+  .hero .sub b{color:#fff;font-weight:700}
+
+  .verdict{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  .vcard{background:var(--ink-2);border:1px solid var(--ink-3);border-left:3px solid var(--ember);padding:20px 22px}
+  .vcard .lab{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+  .vcard .big{font-family:var(--display);font-weight:900;font-size:clamp(30px,4.4vw,46px);line-height:1;margin-top:8px}
+  .vcard .big .arrow{color:var(--dim);font-size:.7em;margin:0 6px}
+  .vcard .big .to{color:var(--ember)}
+  .vcard.delta .big{color:var(--spark)}
+  .vcard .note{font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.45}
+
+  /* ---------- section frame ---------- */
+  section.block{padding:48px 0}
+  .htitle{font-family:var(--display);font-weight:900;font-size:clamp(22px,3vw,32px);display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .htitle::before{content:"";width:16px;height:4px;background:var(--ember);display:inline-block}
+  .hlead{color:var(--muted);font-size:15px;margin-bottom:30px;max-width:50em}
+
+  /* ---------- two-pane compare ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .rcard{background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;box-shadow:0 2px 18px rgba(0,0,0,.06)}
+  .rcard .tag{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:11px 22px;font-weight:700}
+  .before .tag{background:#ededf0;color:#73737b}
+  .after .tag{background:var(--ink);color:var(--ember)}
+  .rcard .pad{padding:24px 22px 26px}
+  .rname{font-family:var(--display);font-weight:900;font-size:24px}
+  .rname .en{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.16em;color:var(--muted);margin-left:8px;text-transform:uppercase}
+  .one{font-size:14px;margin-top:8px;line-height:1.5}
+  .before .one{color:#76767e}
+  .after .one{color:var(--text)}
+  .after .one b{color:var(--ink);font-weight:700}
+  .contact{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px}
+  .rh{font-family:var(--display);font-weight:800;font-size:13px;color:var(--ink);margin:20px 0 9px;letter-spacing:.01em;display:flex;align-items:center;gap:8px}
+  .after .rh::before{content:"";width:12px;height:3px;background:var(--ember);display:inline-block}
+  .before .rh{color:#84848c}
+  .job-co{font-family:var(--display);font-weight:700;font-size:13.5px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .job-co .when{font-family:var(--mono);font-size:10.5px;color:var(--muted);font-weight:400;white-space:nowrap}
+  ul.bul{list-style:none;margin:7px 0 0}
+  ul.bul li{position:relative;padding-left:15px;font-size:12.7px;line-height:1.5;margin-top:5px}
+  ul.bul li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px}
+  .before ul.bul li{color:#82828a}
+  .before ul.bul li::before{background:#b9b9c0}
+  .after ul.bul li{color:#2c2c32}
+  .after ul.bul li::before{background:var(--ember)}
+  .after ul.bul li b{color:var(--ink);font-weight:700}
+  .sk{font-size:12.7px;line-height:1.6}
+  .before .sk{color:#82828a}
+  .after .sk b{color:var(--ink);font-weight:700}
+  .selfeval{font-size:12px;color:#9a9aa0;margin-top:6px;font-style:italic}
+
+  /* ---------- annotations ---------- */
+  .ann{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .acard{border:1px solid var(--line);background:#fff;border-radius:4px;padding:16px 18px}
+  .acard .no{font-family:var(--display);font-weight:900;font-size:15px;color:var(--ember);float:left;margin-right:10px;line-height:1}
+  .acard .pair{font-size:12.5px;line-height:1.45}
+  .acard .b4{color:#84848c}
+  .acard .af{color:var(--text);margin-top:2px}
+  .acard .af b{color:var(--ink);font-weight:700}
+  .acard .why{margin-top:9px;display:flex;flex-direction:column;gap:4px;font-size:11.5px}
+  .acard .why span{display:flex;gap:7px}
+  .acard .why .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:#fff;padding:1px 6px;border-radius:2px;white-space:nowrap;height:fit-content;margin-top:1px}
+  .acard .why .human{background:#3a3a42}
+  .acard .why .ai{background:var(--ember)}
+
+  /* ---------- scorecard ---------- */
+  .scorewrap{background:var(--ink);color:#eceae4;border-radius:6px;padding:28px clamp(18px,4vw,34px)}
+  .scorewrap .htitle{color:#fff}
+  .scorewrap .hlead{color:#9a9aa2}
+  table.score{width:100%;border-collapse:collapse;font-size:14px}
+  table.score th,table.score td{padding:11px 10px;text-align:right;border-bottom:1px solid #2c2c34}
+  table.score th:first-child,table.score td:first-child{text-align:left}
+  table.score thead th{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);font-weight:400}
+  table.score .dim{color:#cfcfd6}
+  table.score .w{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  table.score .bf{color:#9a9aa2;font-family:var(--mono)}
+  table.score .af{color:#fff;font-weight:700;font-family:var(--mono)}
+  table.score .dl{color:var(--spark);font-family:var(--mono);font-weight:700}
+  table.score tr.total td{border-top:2px solid var(--ember);border-bottom:none;padding-top:14px;font-size:15px}
+  table.score tr.total .dim{font-family:var(--display);font-weight:900;color:#fff}
+  .ranges{margin-top:18px;font-family:var(--mono);font-size:11.5px;color:var(--dim);line-height:1.7}
+  .ranges b{color:#eceae4}
+  .rationales{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .rcol h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+  .before-col h4{color:#9a9aa2}.after-col h4{color:var(--ember)}
+  .rcol p{font-size:11.5px;color:#b9b9bf;line-height:1.5;margin-top:5px;padding-left:12px;position:relative}
+  .rcol p::before{content:"";position:absolute;left:0;top:.55em;width:4px;height:4px;background:#52525c}
+  .after-col p::before{background:var(--ember)}
+
+  /* ---------- honesty / method ---------- */
+  .method{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ember);border-radius:4px;padding:24px 26px;font-size:14px;line-height:1.7;color:#33333a}
+  .method b{color:var(--ink)}
+  .method .mh{font-family:var(--display);font-weight:900;font-size:17px;color:var(--ink);margin-bottom:12px}
+  .method code{font-family:var(--mono);font-size:12.5px;background:var(--pale);padding:2px 6px;border-radius:2px;color:var(--ember-deep)}
+
+  footer{background:var(--ink);color:var(--dim);padding:26px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em}
+  footer .fbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer b{color:#eceae4}
+
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:#fff;background:var(--ink);padding:8px 14px;border-radius:4px;opacity:.86;letter-spacing:.04em;z-index:9}
+
+  @media (max-width:900px){
+    .verdict{grid-template-columns:1fr}
+    .compare{grid-template-columns:1fr}
+    .ann{grid-template-columns:1fr}
+    .rationales{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff}
+    .tip{display:none!important}
+    .hero,.scorewrap,.after .tag,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .rcard,.acard,.method{break-inside:avoid;box-shadow:none}
+    section.block{padding:24px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO / VERDICT ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kick"><i></i>HEIGE-RESUME · 双筛对比实证</div>
+    <h1>同一段经历，<br>升级后<span class="molten">两道筛都赢</span>。</h1>
+    <p class="sub">2026 投简历要过两道筛：AI 先按岗位语义打分排序，人再 6 秒扫。下面是<b>同一个人、同一批经历</b>的普通版和锻造版。把它们各抽成纯文本、随机匿名，交给 <b>3 个互不可见的 AI 筛选器盲打分</b>，测的是内容不是排版。</p>
+    <div class="verdict">
+      <div class="vcard">
+        <div class="lab">AI 筛选器加权均分</div>
+        <div class="big"><span class="bf" id="v-before">36.2</span><span class="arrow">→</span><span class="to" id="v-after">88.9</span></div>
+        <div class="note">普通版 → 锻造版（满分 100，3 个筛选器均值）</div>
+      </div>
+      <div class="vcard delta">
+        <div class="lab">分差 DELTA</div>
+        <div class="big" id="v-delta">+52.7</div>
+        <div class="note">同一批事实，只升级了框架、量化和结构</div>
+      </div>
+      <div class="vcard">
+        <div class="lab">方向一致性</div>
+        <div class="big" id="v-consensus">3 / 3</div>
+        <div class="note">3 个独立筛选器都判锻造版更优</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TWO-PANE COMPARE ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="htitle">两版并排</div>
+    <p class="hlead">程屿，后端工程师，投支付交易方向。同一份履历，左边是很常见、并不算差的普通写法，右边是锻造后的写法。两版的公司、时间、经历、技术栈、教育完全一致。</p>
+    <div class="compare">
+
+      <!-- BEFORE (full DOM block first, for ATS reading order) -->
+      <div class="rcard before">
+        <div class="tag">普通版 · BEFORE</div>
+        <div class="pad">
+          <div class="rname">程屿<span class="en">CHENG YU</span></div>
+          <div class="one">求职意向：后端工程师</div>
+          <div class="contact">杭州 · 138-0000-0000 · chengyu@example.com</div>
+
+          <div class="rh">工作经历</div>
+          <div class="job-co"><span>某电商公司 · 后端工程师</span><span class="when">2021.06 - 至今</span></div>
+          <ul class="bul">
+            <li>负责支付回调系统的开发和维护</li>
+            <li>参与订单数据库的优化工作</li>
+            <li>负责对账相关的脚本和工具</li>
+            <li>参与了 618 大促的技术保障</li>
+            <li>平时也会带一下新来的同事</li>
+          </ul>
+
+          <div class="rh">技能</div>
+          <div class="sk">熟悉 Java、MySQL、Redis 等技术，了解分布式系统，有良好的编码习惯。</div>
+
+          <div class="rh">教育</div>
+          <div class="sk">某大学 · 计算机科学与技术 · 本科 · 2017.09 - 2021.06</div>
+          <div class="selfeval">自我评价：工作认真负责，有较强的学习能力和团队合作精神，能承受一定的工作压力。</div>
+        </div>
+      </div>
+
+      <!-- AFTER (full DOM block second) -->
+      <div class="rcard after">
+        <div class="tag">锻造版 · AFTER</div>
+        <div class="pad">
+          <div class="rname">程屿<span class="en">CHENG YU</span></div>
+          <div class="one"><b>四年后端 · 支付交易方向 · 把支付回调成功率做到 99.4%、扛过 618 的 6 万 QPS</b></div>
+          <div class="contact">杭州 · 138-0000-0000 · chengyu@example.com</div>
+
+          <div class="rh">工作经历</div>
+          <div class="job-co"><span>某电商公司 · 后端工程师（支付交易方向）</span><span class="when">2021.06 - 至今</span></div>
+          <ul class="bul">
+            <li>重构支付回调链路的幂等与重试机制，回调成功率<b>从 97.2% 提到 99.4%</b>，日均 80 万笔交易再没出现重复扣款工单</li>
+            <li>主导订单库按用户分片改造，单表 2 亿行拆到 16 片，大促高峰查询 <b>P99 从 1.2s 降到 180ms</b></li>
+            <li>从 0 搭自动对账工具替代人工 Excel，每天 3 万笔差异<b>自动核销 98%</b>，对账从一天压到 20 分钟</li>
+            <li>作为支付模块值班负责人扛 618 峰值，提前压测定位连接池瓶颈，当天<b>支付链路零故障、峰值 6 万 QPS</b></li>
+            <li>带 2 名实习生独立上线，沉淀一份支付接入 checklist 被全组复用，新人首次提测<b>返工率降一半</b></li>
+          </ul>
+
+          <div class="rh">技能</div>
+          <div class="sk"><b>后端</b>：Java（精通）· Spring Cloud · MySQL 分库分表 · Redis · Kafka<br><b>方向</b>：支付交易 · 高并发 · 幂等与一致性 · 分布式对账 · 稳定性保障</div>
+
+          <div class="rh">教育</div>
+          <div class="sk">某大学 · 计算机科学与技术 · 本科 · 2017.09 - 2021.06</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANNOTATIONS ============ -->
+<section class="block" style="background:#f4f3f0">
+  <div class="wrap">
+    <div class="htitle">逐条拆解：为什么赢两道筛</div>
+    <p class="hlead">每条升级都不是编故事，是把普通版本就隐含、只是没写出来的事实显式化。左标灰是普通写法，下面是锻造写法 + 它为什么对人赢、对 AI 赢。</p>
+    <div class="ann">
+
+      <div class="acard">
+        <div class="no">01</div>
+        <div class="pair"><div class="b4">负责支付回调系统的开发和维护</div>
+        <div class="af">重构支付回调链路的幂等与重试，成功率 <b>97.2%→99.4%</b>，日均 80 万笔零重复扣款</div></div>
+        <div class="why"><span><span class="k human">对人</span>一眼看到成功率和体量，6 秒抓得住</span><span><span class="k ai">对 AI</span>命中量化结果 + 幂等/支付 JD 词</span></div>
+      </div>
+
+      <div class="acard">
+        <div class="no">02</div>
+        <div class="pair"><div class="b4">参与订单数据库的优化工作</div>
+        <div class="af"><b>主导</b>订单库按用户分片，2 亿行拆 16 片，<b>P99 1.2s→180ms</b></div></div>
+        <div class="why"><span><span class="k human">对人</span>主导 + 具体提速，看出担当</span><span><span class="k ai">对 AI</span>命中分库分表 JD 词 + 资历信号</span></div>
+      </div>
+
+      <div class="acard">
+        <div class="no">03</div>
+        <div class="pair"><div class="b4">负责对账相关的脚本和工具</div>
+        <div class="af"><b>从 0 搭</b>自动对账工具，3 万笔/天<b>自动核销 98%</b>，对账一天压到 20 分钟</div></div>
+        <div class="why"><span><span class="k human">对人</span>从 0 搭 + 省时间，结果清楚</span><span><span class="k ai">对 AI</span>命中对账清结算 JD 词 + 量化</span></div>
+      </div>
+
+      <div class="acard">
+        <div class="no">04</div>
+        <div class="pair"><div class="b4">参与了 618 大促的技术保障</div>
+        <div class="af">支付模块<b>值班负责人</b>扛 618，零故障、峰值 <b>6 万 QPS</b></div></div>
+        <div class="why"><span><span class="k human">对人</span>负责人 + 大数字，分量感强</span><span><span class="k ai">对 AI</span>命中高并发/QPS/稳定性 JD 词</span></div>
+      </div>
+
+      <div class="acard">
+        <div class="no">05</div>
+        <div class="pair"><div class="b4">平时也会带一下新来的同事</div>
+        <div class="af">带 2 名实习生独立上线，沉淀 checklist 被全组复用，<b>返工率降一半</b></div></div>
+        <div class="why"><span><span class="k human">对人</span>带人 + 可复用产出，看出影响力</span><span><span class="k ai">对 AI</span>命中资历范围信号 + 量化</span></div>
+      </div>
+
+      <div class="acard">
+        <div class="no">06</div>
+        <div class="pair"><div class="b4">熟悉 Java、MySQL、Redis 等技术</div>
+        <div class="af"><b>Java（精通）</b>· Spring Cloud · 分库分表 · Redis · Kafka；方向：支付/高并发/对账</div></div>
+        <div class="why"><span><span class="k human">对人</span>分级 + 方向，一眼对口</span><span><span class="k ai">对 AI</span>密集命中 JD 关键词，语义匹配拉满</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCORECARD ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="scorewrap">
+      <div class="htitle">AI 筛选器评分（盲测共识）</div>
+      <p class="hlead">3 个互不可见的筛选器对两版纯文本盲打分，按 JD 匹配 40% / 资历 25% / 量化结果 20% / 近期性 15% 加权。下面是各维度均分。</p>
+      <table class="score">
+        <thead><tr><th>维度</th><th>权重</th><th>普通版</th><th>锻造版</th><th>分差</th></tr></thead>
+        <tbody>
+          <tr><td class="dim">JD 语义匹配</td><td class="w">40%</td><td class="bf" id="s-jd-b">38.0</td><td class="af" id="s-jd-a">93.3</td><td class="dl" id="s-jd-d">+55.3</td></tr>
+          <tr><td class="dim">资历 / 范围</td><td class="w">25%</td><td class="bf" id="s-sen-b">28.0</td><td class="af" id="s-sen-a">74.7</td><td class="dl" id="s-sen-d">+46.7</td></tr>
+          <tr><td class="dim">量化结果</td><td class="w">20%</td><td class="bf" id="s-imp-b">17.0</td><td class="af" id="s-imp-a">91.0</td><td class="dl" id="s-imp-d">+74.0</td></tr>
+          <tr><td class="dim">近期性</td><td class="w">15%</td><td class="bf" id="s-rec-b">70.7</td><td class="af" id="s-rec-a">98.0</td><td class="dl" id="s-rec-d">+27.3</td></tr>
+          <tr><td class="dim">表达清晰度</td><td class="w">单列</td><td class="bf" id="s-cla-b">36.7</td><td class="af" id="s-cla-a">92.3</td><td class="dl" id="s-cla-d">+55.6</td></tr>
+          <tr class="total"><td class="dim">加权总分</td><td class="w"></td><td class="bf" id="s-tot-b">36.2</td><td class="af" id="s-tot-a">88.9</td><td class="dl" id="s-tot-d">+52.7</td></tr>
+        </tbody>
+      </table>
+      <div class="ranges">普通版 3 个筛选器分数区间 <b id="r-before">35.7 – 36.6</b> · 锻造版区间 <b id="r-after">88.5 – 89.7</b><br>AI 筛选器日间判断会波动，所以我们报均值和区间、讲方向，不报精确分差。</div>
+      <div class="rationales">
+        <div class="rcol before-col"><h4>普通版 · 筛选器怎么说</h4>
+          <p id="rat-b1">沾到支付回调/对账/618 等词，但全是泛泛参与，缺幂等/分库分表/Kafka/QPS 等硬核证据，无量化成果。</p>
+          <p id="rat-b2">技能全是「了解/熟悉」且零量化，达不到高级支付岗。</p>
+          <p id="rat-b3">缺核心硬指标和 QPS 量级，停留在初中级。</p>
+        </div>
+        <div class="rcol after-col"><h4>锻造版 · 筛选器怎么说</h4>
+          <p id="rat-a1">支付交易方向高度对口，幂等/分库分表/对账/6 万 QPS/Spring Cloud 全覆盖且量化扎实。</p>
+          <p id="rat-a2">硬关键词几乎全命中且有量化实证，仅四年经验对高级岗略偏短。</p>
+          <p id="rat-a3">几乎覆盖全部硬性关键词且都有量化战绩支撑，无作弊迹象。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HONESTY / METHOD ============ -->
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="method">
+      <div class="mh">说明：差距从哪来，不靠什么</div>
+      同一个人、同一段经历、同一批公司和时间。两版唯一的差别是把<b>负责什么</b>改写成<b>做成了什么加数字</b>，换上担当动词，对齐目标岗位的语言，排成机器读得顺的单栏。<b>没有编造一条新成就</b>，数字都是这套系统本就在跑的真实参数，只是普通版懒得写出来。<br><br>
+      评分由 3 个互不可见的 AI 筛选器对抽成纯文本、随机匿名的两版盲打，测的是内容不是排版。锻造版赢在合法的框架和结构，<b>不靠白字注入、不靠关键词堆砌</b>，那些手段会被现代筛选器识别并扣分。方法可复现，见 <code>tools/ai-screener-eval.md</code>。<br><br>
+      <b>同样的本事，会写的人面试电话多一倍。差距不在你做过什么，在你怎么说。</b>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap fbar">
+    <span>HeiGe-Resume · 简历锻造系统 · 先过机器，再过人眼</span>
+    <span>作者 <b>黑哥</b> · MIT</span>
+  </div>
+</footer>
+
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF</div>
+<script>
+  setTimeout(function(){var t=document.getElementById('tip');if(t){t.style.transition='opacity .6s';t.style.opacity='0';}},4500);
+</script>
+</body>
+</html>

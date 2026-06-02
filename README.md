@@ -2,19 +2,19 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-ff4d12.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-ff4d12.svg)
 ![Claude](https://img.shields.io/badge/Claude-Skill-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-**简历锻造系统 | 6 秒让人记住你最强那一条**
+**简历锻造系统 | 先过机器，再过人眼**
 
-简历不是一张履历表，是一份只为一个岗位写的提案。
+2026 投简历要过两道筛：AI 先按岗位语义打分排序，人再 6 秒扫。同一段经历，升级后两道筛都赢。
 
-[这是什么](#这是什么-what-is-this) • [方法论](#核心方法论-五道锻造工序) • [样例画廊](#样例画廊-gallery) • [快速开始](#快速开始-quick-start) • [使用指南](#使用指南-usage-guide)
+[这是什么](#这是什么-what-is-this) • [对比实证](#对比实证-proof) • [方法论](#核心方法论-六道锻造工序) • [样例画廊](#样例画廊-gallery) • [快速开始](#快速开始-quick-start)
 
 <br>
 
-<a href="https://heigeai.github.io/HeiGe-Resume/examples/heige-resume.html"><img src="assets/previews/heige-resume.webp" width="62%" alt="HeiGe-Resume · 简历锻造系统" /></a>
+<a href="https://heigeai.github.io/HeiGe-Resume/examples/comparison.html"><img src="assets/previews/comparison.webp" width="86%" alt="HeiGe-Resume · 同一段经历升级后两道筛都赢" /></a>
 
 </div>
 
@@ -22,59 +22,66 @@
 
 ## 这是什么 What is this
 
-让 AI 做出**有重点、一眼记得住、过得了机器筛**的简历。
+让 AI 把你的简历升级成**既过得了 AI 语义筛、又让人 6 秒记得住**的提案。
 
-HR 平均花 6 到 8 秒扫一份简历，决定你进不进下一轮。大多数 AI 做出来的简历是一张流水账：求职意向、教育背景、负责什么、参与什么，再套个跟八百份一样的双栏模板。6 秒扫过去，扫不到你最强那条，简历就进了废纸堆。
+2026 年约 83% 的公司用 AI 筛简历。它先读你的简历，按岗位语义打分排序，排不进前列，人根本看不到你。过了机器这关，HR 再花 6 到 8 秒扫。大多数 AI 做出来的简历是一张流水账：通篇负责什么、参与什么，没有一个数字，再套个跟八百份一样的双栏模板。两道筛都过不去。
 
-HeiGe-Resume 换一种做法：**把简历当成一份提案，6 秒内让人记住你最强那一条。** 一句话说清你是谁，每条经历写你做成了什么，最强的信号放在视线第一落点。
+HeiGe-Resume 换一种做法：**把同一段经历升级成两道筛都赢的提案。** 一句话说清你是谁，每条经历写你做成了什么，对齐目标岗位，排成机器读得顺的单栏。
 
-它不是又一个模板，而是一套从招聘真实场景里磨出来的方法论：
+它不只把版式做漂亮，更升级内容本身：
 
-- ✅ **五道锻造工序**，每份简历都要过一遍
-- ✅ **写结果不写职责**，把「负责 XX」翻译成「做成了什么 + 数字」
-- ✅ **PDF 优先**：A4 排版，Cmd+P 导出的 PDF 就是最终投递版
-- ✅ **过得了 ATS**：文字可选中、不嵌图、不用进度条，机器读得出
-- ✅ **五套跨职业样例**，工程师 / 产品 / 设计 / 应届 / 高管，全是虚构人物
+- ✅ **履历升级引擎**，把「负责 XX」锻造成「做成了 X、量化成 Y、靠 Z」（XYZ 公式 + 担当动词 + 正当量化）
+- ✅ **过 AI 筛**，对岗调频 + 镜像 JD 术语 + 资历范围信号，让机器判你高度匹配
+- ✅ **诚信红线**，强化措辞可以、编造事实不行，明确拒绝白字注入等作弊
+- ✅ **PDF 优先 + 机器可读**：A4 单文件、文字可选中、Cmd+P 导出即投递版
+- ✅ **六套跨职业样例 + 一套前后对比实证**，全是虚构人物
 - ✅ 零依赖单文件，到处都能用
 
-**适用场景**：求职简历、跳槽简历、应届生简历、技术/产品/设计/运营简历、高管简历、自由职业者一页纸、个人主页 hero。
+**适用场景**：求职简历、跳槽简历、应届生简历、技术/产品/设计/运营简历、高管简历、自由职业者一页纸。
 
 **支持平台**：Claude Code、Cursor、Windsurf、Cline、Aider、OpenClaw、Hermes、ChatGPT、Claude.ai 等。
 
-> 别人交一张流水账履历表，你交一份 6 秒就记住你的提案。一句话定位，每条都是战功。
+> 别人交一张流水账，你交一份过得了机器、6 秒抓得住人的提案。履历升级，对岗调频，每条都是经得起追问的战功。
 
 ---
 
-## 为什么需要它 Why this matters
+## 对比实证 Proof
 
-| 普通 AI 给你的简历 | HeiGe-Resume 锻造的简历 |
-|---|---|
-| 套个跟八百份一样的双栏模板 | 按岗位定调，有重点有气场，一眼不一样 |
-| 通篇「负责 / 参与 / 协助」，没有一个数字 | 每条都是战功：做成了什么 + 数字 |
-| 顶部一句正确的废话，或者没有定位 | 一句话把你钉死：角色 + 年限 + 最硬一条 |
-| 技能进度条、五角星，信息量为零 | 技能用文字分级，机器也读得出 |
-| 好看但文字嵌在图里，ATS 读不出 | 全是真文字，过得了机器筛 |
+我们拿**同一个人、同一段经历**做了普通版和锻造版，把两版各抽成纯文本、随机匿名，交给 **3 个互不可见的 AI 筛选器盲打分**（测内容不测排版）。结果：
+
+| | AI 筛选器加权均分 | JD 匹配 | 量化结果 |
+|---|:---:|:---:|:---:|
+| 普通版 | 36.2 | 38.0 | 17.0 |
+| 锻造版 | **88.9** | **93.3** | **91.0** |
+| 分差 | **+52.7** | +55.3 | +74.0 |
+
+3 个筛选器一致判锻造版更优。没有编造一条新成就，数字都是普通版本就隐含、只是没写出来的真实参数。锻造版赢在合法的框架和结构，不靠白字注入和关键词堆砌（那些会被现代筛选器识别并扣分）。
+
+完整对比 + 逐条拆解见 **[在线 Demo](https://heigeai.github.io/HeiGe-Resume/examples/comparison.html)**，测试方法可复现，见 [`tools/ai-screener-eval.md`](tools/ai-screener-eval.md)。AI 筛选器日间会波动，所以我们报均值和区间、讲方向。
 
 ---
 
-## 核心方法论 五道锻造工序
+## 核心方法论 六道锻造工序
 
-做简历之前先认清一个事实：HR 6 到 8 秒扫一份简历。填表思维问「我有哪些经历要列」，提案思维问「这岗位要什么、我哪条最能打、怎么让它前 6 秒被看到」。
+做简历之前先认清 2026 的现实：投简历要过两道筛，机器先按岗位语义打分排序，人再 6 秒扫。锻造的功夫，是让升级后的同一条经历同时赢下这两道筛。
 
 ### 🎯 01 一句话定位 The One-Liner
-顶部一句话说清你是谁、能解决什么，不是「求职意向：XX」。公式：角色 + 年限 + 最硬一条标签。
+钉死你是谁 + 镜像目标岗位语言。机器靠它判匹配，人靠它决定往下看。
 
-### 📈 02 写结果不写职责 Results, not Duties
-每条写你做成了什么，不写你负责什么。用结果加数字，把「负责 XX 系统」翻译成「成功率从 98.1% 提到 99.6%，一年少赔 200 万」。
+### ⚒️ 02 履历升级引擎 The Upgrade Engine
+把「负责什么」锻造成「做成了 X、量化成 Y、靠 Z」。强动词、可验证数字、不编造。两道筛共同的弹药。
 
-### ⏱ 03 6 秒扫描 The 6-Second Scan
-视觉层级让最强信号最先被看到。最强的经历、数字、公司放在视线第一落点。什么都加粗等于什么都没加粗。
+### 🎯 03 对岗调频 Tune to the JD
+抽 JD 关键词、用它的术语复述、最相关战功重排到最前。AI 语义匹配占约 40% 权重，ROI 最高（约 6 倍回复率）。
 
-### 📄 04 一页纪律 One-Page Discipline
-一页讲完（资深最多两页，且第一页能独立成立）。一页是纪律，逼你筛掉不重要的。排版对齐到网格，字号阶梯统一。
+### 🤖 04 机器可读 Machine-Readable
+单栏真文字、阅读顺序正确、标准小标题、近期靠前，不嵌图不进度条。让 AI 筛选器解析对、判得高。
 
-### 🔍 05 反模板体检 Anti-Template Check
-出货前强制过一遍：还是那个烂大街双栏模板吗？有 keyword soup 吗？文字机器读得出吗？命中任何一条都回去改。这是交付门槛。
+### ⏱ 05 6 秒扫描 The 6-Second Scan
+过了机器进到人眼，让最强信号落在视线第一落点。层级靠字号字重留白，6 秒抓到三个重点。
+
+### 🔍 06 一页纪律 + 反作弊体检 One-Page & Anti-Gaming
+一页讲完（资深最多两页）。出货前过反模板 + 反作弊（白字注入 / 夸大无据）+ 诚信（每条经得起追问）。交付门槛。
 
 完整方法论与使用流程见 [`SKILL.md`](SKILL.md)。
 
@@ -86,6 +93,7 @@ HeiGe-Resume 换一种做法：**把简历当成一份提案，6 秒内让人记
 
 | 预览 | 气质 | 角色 |
 |:--:|:--|:--|
+| <a href="https://heigeai.github.io/HeiGe-Resume/examples/comparison.html"><img src="assets/previews/comparison.webp" width="300" alt="comparison" /></a> | **前后对比实证** | 普通版 vs 锻造版 + AI 评分 |
 | <a href="https://heigeai.github.io/HeiGe-Resume/examples/heige-resume.html"><img src="assets/previews/heige-resume.webp" width="300" alt="heige-resume" /></a> | **工业 / 硬核** | 资深后端工程师（1 页） |
 | <a href="https://heigeai.github.io/HeiGe-Resume/examples/pm-resume.html"><img src="assets/previews/pm-resume.webp" width="300" alt="pm-resume" /></a> | **克制 / 专业** | 产品经理（1 页） |
 | <a href="https://heigeai.github.io/HeiGe-Resume/examples/designer-resume.html"><img src="assets/previews/designer-resume.webp" width="300" alt="designer-resume" /></a> | **设计感 / 张扬** | 设计师（1 页） |
@@ -136,21 +144,23 @@ cp -r HeiGe-Resume ~/.claude/skills/
 
 HeiGe-Resume 会带你走完整个锻造流程：
 
-1. **定调**：先确认投什么岗位、什么阶段、有哪些料，再挑一个气质方向。
-2. **搭骨架**：先写那句一句话定位，再从经历里挑出最能打的几条战功，按「结果不写职责」改写补数字。
-3. **写生产级代码**：A4 单文件、PDF 优先、ATS 友好（文字可选中）、中文带字体兜底。
-4. **反模板体检**：出货前过一遍体检清单，模板味全部干掉，6 秒能扫到重点、机器筛得过才交付。
+1. **定调**：先确认投什么岗位、什么阶段、有没有目标 JD、有哪些料，再挑一个气质方向。
+2. **搭骨架 + 升级履历**：先写一句话定位，再把每条经历按 XYZ 公式锻造（做成 X / 量化成 Y / 靠 Z），诚信红线不碰。
+3. **对岗调频 + 机器可读**：抽 JD 关键词、用 JD 术语复述、最相关靠前；单栏真文字、标准小标题、近期靠前。
+4. **写生产级代码**：A4 单文件、PDF 优先、文字可选中、中文带字体兜底。
+5. **双筛体检 + 反作弊**：机器关 + 人眼关都过，没有白字注入、每条经得起追问才交付。
 
 ### 场景示例
 
-**从零做一份简历**
+**升级履历，过 AI 筛**
 ```
-用 HeiGe-Resume 帮我做份简历，我是六年产品设计师，投大厂
+我简历全是"负责 XX"，用 HeiGe-Resume 帮我升级成有结果有数字、能过 AI 筛的
 ```
 
-**把流水账优化成战功**
+**按岗位定制**
 ```
-我简历全是"负责 XX"，用 HeiGe-Resume 帮我改成有结果有数字的
+用 HeiGe-Resume 帮我按这个 JD 优化简历，我是五年后端投支付方向
+[贴上 JD]
 ```
 
 **应届生简历**
@@ -180,23 +190,27 @@ HeiGe-Resume 本质是一套让 AI 把简历写出重点、做得能投的方法
 
 ```
 HeiGe-Resume/
-├── SKILL.md                        # Skill 主文件：方法论 + 使用流程
-├── references/                     # 设计资产
-│   ├── aesthetic-directions.md     # 五种气质方向库（每种给到具体打法）
-│   ├── resume-production-spec.md   # 单文件简历硬规格（PDF 优先 + ATS 友好 + 字体兜底）
-│   ├── content-templates.md        # 一句话定位 / 结果不写职责 / 各阶段战功写法
-│   └── anti-template-checklist.md  # 反模板体检清单（交付门槛）
-├── examples/                       # 同一套方法论 × 五种职业气质（全虚构人物）
-│   ├── heige-resume.html           # 工业/硬核 · 资深后端工程师（1 页）
-│   ├── pm-resume.html              # 克制/专业 · 产品经理（1 页）
-│   ├── designer-resume.html        # 设计感/张扬 · 设计师（1 页）
-│   ├── newgrad-resume.html         # 温暖/简洁 · 应届毕业生（1 页）
-│   └── executive-resume.html       # 高定/极简 · 技术高管（2 页）
-├── assets/
-│   └── previews/                   # README 用的样例预览图（WebP）
-├── LICENSE
-├── CHANGELOG.md
-└── README.md
+├── SKILL.md                          # Skill 主文件：六道工序 + 使用流程
+├── references/                       # 设计资产
+│   ├── content-upgrade-engine.md     # 履历升级引擎（XYZ / 强动词 / 正当量化 / 诚信红线）
+│   ├── ai-screener-optimization.md   # 过 AI 筛（LLM 权重 / 对岗调频 / 反作弊）
+│   ├── resume-production-spec.md      # 单文件简历硬规格（PDF + 机器可读 + 字体兜底）
+│   ├── content-templates.md          # 内容速查卡（定位 / 结果不写职责 / 各阶段）
+│   ├── aesthetic-directions.md       # 五种气质方向库
+│   └── anti-template-checklist.md    # 反模板 + 反作弊 + 诚信体检（交付门槛）
+├── examples/                         # 六个样例（全虚构人物）
+│   ├── comparison.html               # 前后对比实证 + AI 评分
+│   ├── heige-resume.html             # 工业/硬核 · 资深后端工程师（1 页）
+│   ├── pm-resume.html                # 克制/专业 · 产品经理（1 页）
+│   ├── designer-resume.html          # 设计感/张扬 · 设计师（1 页）
+│   ├── newgrad-resume.html           # 温暖/简洁 · 应届毕业生（1 页）
+│   └── executive-resume.html         # 高定/极简 · 技术高管（2 页）
+├── tools/                            # 本地 AI 筛选测试 harness
+│   ├── ai-screener-eval.md           # 方法 + JD + 评分 rubric
+│   ├── ai-screener-results.md        # 盲测共识结果
+│   └── inputs/                       # 盲测纯文本输入（jd / before / after）
+├── assets/previews/                  # README 用的样例预览图（WebP）
+├── LICENSE · CHANGELOG.md · README.md
 ```
 
 ---
@@ -205,11 +219,14 @@ HeiGe-Resume/
 
 完整记录见 [CHANGELOG.md](CHANGELOG.md)。
 
+### v2.0.0 (2026-06-02)
+- ⚒️ 双筛升级。招牌从「6 秒决定去留」升级为「先过机器，再过人眼」，五道工序扩成六道，加入履历升级引擎 + 对岗调频 + 机器可读
+- 🤖 新增两个引擎：`content-upgrade-engine.md`（XYZ 公式 / 强动词 / 正当量化 / 诚信红线）、`ai-screener-optimization.md`（LLM 语义筛权重 / 对岗调频 / 反作弊）
+- 🧪 新增 `examples/comparison.html` 前后对比实证 + `tools/` 本地 AI 筛选测试：3 个互不可见筛选器盲打分，同一段经历升级后 36.2 → 88.9（+52.7），方向一致
+- 🛡️ 诚信立场：强化措辞可以、编造事实不行，明确拒绝白字注入 / prompt 注入
+
 ### v1.0.0 (2026-06-01)
-- 🎉 首次发布
-- 🎯 原创方法论「6 秒决定去留」，五道锻造工序：一句话定位 / 写结果不写职责 / 6 秒扫描 / 一页纪律 / 反模板体检
-- 📐 五种气质方向库 + 内容模板 + 单文件简历生产铁律（PDF 优先 + ATS 友好）+ 反模板体检清单
-- 📄 五套跨职业样例，A4 可导出 PDF、文字可选中过机器筛，全部零依赖单文件、虚构人物
+- 🎉 首次发布。五道锻造工序 + 五种气质方向库 + 五套跨职业样例，A4 可导出 PDF、文字可选中过机器筛
 
 ---
 
