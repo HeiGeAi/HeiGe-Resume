@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>程屿 · 后端工程师 · 泛用版（进简历库）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#111114; --ink-2:#1c1c22; --paper:#ffffff; --text:#1a1a1e;
+    --muted:#6a6a72; --line:#e3e3e6; --ember:#ff4d12; --ember-deep:#d83a08;
+    --display:"Archivo","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --body:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{ -webkit-text-size-adjust:100%; }
+  body{font-family:var(--body);color:var(--text);background:#e9e9ec;line-height:1.5}
+
+  .page{width:210mm;min-height:297mm;margin:24px auto;background:var(--paper);
+    box-shadow:0 4px 30px rgba(0,0,0,.18);position:relative;overflow:hidden}
+
+  .head{background:var(--ink);color:#f3f1ec;padding:20mm 18mm 10mm}
+  .head .name{font-family:var(--display);font-weight:900;font-size:42pt;line-height:.98;letter-spacing:.01em}
+  .head .name .en{font-family:var(--mono);font-weight:700;font-size:12pt;letter-spacing:.18em;color:#8a8a92;margin-left:10px;text-transform:uppercase}
+  .head .one{font-size:12pt;margin-top:12px;color:#e9e6df}
+  .head .one b{color:var(--ember);font-weight:700}
+  .head .contact{font-family:var(--mono);font-size:9.5pt;letter-spacing:.02em;color:#9a9aa2;margin-top:15px;display:flex;flex-wrap:wrap;gap:6px 20px}
+  .head .contact span{white-space:nowrap}
+  .head .contact b{color:#d8d8de;font-weight:400}
+  .head .bar{position:absolute;left:0;right:0;height:4px;background:var(--ember);bottom:0}
+
+  .body{padding:9mm 18mm 11mm}
+  section{margin-top:7.5mm;break-inside:avoid}
+  section:first-child{margin-top:2mm}
+  h2{font-family:var(--display);font-weight:900;font-size:13pt;color:var(--ink);letter-spacing:.01em;
+    display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  h2::before{content:"";width:16px;height:4px;background:var(--ember);display:inline-block}
+  h2 .en{font-family:var(--mono);font-weight:400;font-size:8.5pt;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+
+  .wins{display:flex;flex-direction:column;gap:6px}
+  .win{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;font-size:10.5pt}
+  .win .dot{font-family:var(--mono);color:var(--ember);font-weight:700;font-size:10pt}
+  .win b{color:var(--ink);font-weight:700}
+
+  .job{margin-bottom:6mm;break-inside:avoid}
+  .job:last-child{margin-bottom:0}
+  .job .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .job .co{font-family:var(--display);font-weight:700;font-size:11.5pt;color:var(--ink)}
+  .job .co .role{font-weight:500;color:#3a3a40}
+  .job .when{font-family:var(--mono);font-size:9pt;color:var(--muted);white-space:nowrap}
+  .job ul{list-style:none;margin-top:5px}
+  .job li{position:relative;padding-left:16px;font-size:10pt;line-height:1.5;margin-top:4px;color:#2c2c32}
+  .job li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;height:5px;background:var(--ember);}
+  .job li b{color:var(--ink);font-weight:700}
+
+  .kv{display:grid;grid-template-columns:78px 1fr;gap:6px 14px;font-size:10pt;line-height:1.5}
+  .kv .k{font-family:var(--mono);font-size:8.5pt;color:var(--muted);padding-top:1px}
+  .kv .v b{color:var(--ink);font-weight:700}
+  .edu .top{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+  .edu .sch{font-family:var(--display);font-weight:700;font-size:11pt}
+  .edu .sch span{font-weight:500;color:#3a3a40}
+  .edu .when{font-family:var(--mono);font-size:9pt;color:var(--muted)}
+
+  .vbadge{position:fixed;top:14px;right:14px;z-index:9;font-family:var(--mono);font-size:10px;font-weight:700;
+    letter-spacing:.1em;background:var(--ember);color:#150700;padding:6px 11px;border-radius:3px}
+  .tip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+    color:#fff;background:var(--ink);padding:8px 14px;border-radius:4px;opacity:.86;letter-spacing:.04em}
+
+  @media screen and (max-width:740px){ .page{width:96vw;margin:12px auto} }
+
+  @media print{
+    @page{ size:A4; margin:0; }
+    html,body{background:#fff}
+    .page{width:210mm;min-height:297mm;margin:0;box-shadow:none}
+    .tip,.vbadge{display:none!important}
+    *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    section,.job,.win{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div class="name">程屿<span class="en">CHENG YU</span></div>
+    <p class="one">四年后端 · 支付交易方向 · 做过支付清结算、对账、风控，扛过大促 <b>高并发</b></p>
+    <div class="contact">
+      <span><b>杭州</b></span>
+      <span>138-0000-0000</span>
+      <span>chengyu@example.com</span>
+      <span>github.com/chengyu</span>
+    </div>
+    <div class="bar"></div>
+  </header>
+
+  <main class="body">
+
+    <section>
+      <h2>核心成就 <span class="en">Highlights</span></h2>
+      <div class="wins">
+        <div class="win"><span class="dot">→</span><div>重构支付回调链路的幂等与重试，成功率从 <b>97.2% 提到 99.4%</b>，日均 80 万笔零重复扣款</div></div>
+        <div class="win"><span class="dot">→</span><div>主导订单库按用户分片，<b>2 亿行</b>拆到 16 片，大促高峰查询 <b>P99 1.2s 降到 180ms</b></div></div>
+        <div class="win"><span class="dot">→</span><div>从 0 搭自动对账工具，3 万笔 / 天<b>自动核销 98%</b>，对账从一天压到 20 分钟</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作经历 <span class="en">Experience</span></h2>
+      <div class="job">
+        <div class="top">
+          <div class="co">某电商公司 <span class="role">· 后端工程师（支付交易方向）</span></div>
+          <div class="when">2021.06 — 至今</div>
+        </div>
+        <ul>
+          <li>重构支付回调链路的幂等与重试机制，回调成功率 <b>97.2% → 99.4%</b>，日均 80 万笔交易零重复扣款工单</li>
+          <li>主导订单库按用户分片改造（ShardingSphere），单表 2 亿行拆到 16 片，大促 <b>P99 从 1.2s 降到 180ms</b></li>
+          <li>从 0 搭自动对账与清结算工具，每天 3 万笔差异<b>自动核销 98%</b>，资金对账从一天压到 20 分钟</li>
+          <li>作为支付模块值班负责人扛 618 峰值，全链路压测定位瓶颈，当天<b>零故障、峰值 6 万 QPS</b></li>
+          <li>带 2 名实习生从入职到独立上线，沉淀支付接入 checklist 被全组复用，新人首次提测<b>返工率降一半</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>技能 <span class="en">Skills</span></h2>
+      <div class="kv">
+        <div class="k">语言</div><div class="v"><b>Java（精通）</b> · SQL</div>
+        <div class="k">框架</div><div class="v">Spring Boot · Spring Cloud · MyBatis · gRPC · 微服务</div>
+        <div class="k">中间件</div><div class="v">MySQL · 分库分表（ShardingSphere）· Redis · Kafka · 消息队列</div>
+        <div class="k">运维</div><div class="v">Docker · Linux · Git · Jenkins</div>
+        <div class="k">方向</div><div class="v">支付 · 交易 · 清结算 · 对账 · 资金安全 · 风控 · 幂等 · 分布式一致性 · 高并发 · 稳定性保障</div>
+      </div>
+    </section>
+
+    <section class="edu">
+      <h2>教育 <span class="en">Education</span></h2>
+      <div class="top">
+        <div class="sch">某大学 <span>· 计算机科学与技术 · 本科</span></div>
+        <div class="when">2017.09 — 2021.06</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div class="vbadge">泛用版 · 进简历库</div>
+<div class="tip" id="tip">Cmd / Ctrl + P 导出 PDF</div>
+<script>
+  setTimeout(function(){var t=document.getElementById('tip'); if(t){t.style.transition='opacity .6s'; t.style.opacity='0';}}, 4500);
+</script>
+</body>
+</html>
