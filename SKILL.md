@@ -10,10 +10,11 @@ description: >
   输出为单文件 HTML：A4 排版、文字可选中、可 Cmd+P 完美导出 PDF，且默认带可编辑层，用户打开就能在浏览器里直接改文字、再导出 PDF 或下载独立 HTML。动手前先定调，出货前过反作弊体检。
   注意：本 skill 负责"从零设计有重点、机器和人都买账的简历/一页纸"；如果是做多页演示 deck，那是 heige-ppt 的活；
   如果是做产品界面/落地页，那是 heige-ui 的活。
-author: Blake 黑哥
-version: 2.3.0
 license: MIT
-compatible_platforms: ["Claude Code", "Cursor", "Windsurf", "Cline", "Aider", "OpenClaw", "Hermes", "ChatGPT", "Claude.ai", "通用 AI 助手"]
+metadata:
+  author: Blake 黑哥
+  version: 2.3.1
+  compatible_platforms: ["Claude Code", "Cursor", "Windsurf", "Cline", "Aider", "OpenClaw", "Hermes", "ChatGPT", "Claude.ai", "通用 AI 助手"]
 ---
 
 # HeiGe-Resume（简历锻造系统）

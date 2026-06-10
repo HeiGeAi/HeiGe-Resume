@@ -39,7 +39,7 @@
 weighted_total = jd_match*0.4 + seniority*0.25 + impact*0.2 + recency*0.15
 ```
 
-权重 40/25/20/15 对齐 `../references/ai-screener-optimization.md` 第二节的推断权重。
+权重 40/25/20/15 对齐 `../references/ai-screener-optimization.md` 第四节的推断权重。
 
 ## 盲测步骤
 
@@ -49,7 +49,7 @@ weighted_total = jd_match*0.4 + seniority*0.25 + impact*0.2 + recency*0.15
 
 ## 复现
 
-clone 仓库后，让你的 AI 起 6 个隔离子 agent 按上面步骤重跑，或用可选脚本 `run_screener_eval.py`（需自备 LLM API key，默认路径不需要它）。分数每次会有波动，但锻造版均值高于普通版的方向应当稳定。
+clone 仓库后，让你的 AI 起 6 个隔离子 agent 按上面步骤重跑即可。这套评测是人工流程，不依赖脚本，也无需任何 API key。分数每次会有波动，但锻造版均值高于普通版的方向应当稳定。
 
 ## 诚实声明
 
