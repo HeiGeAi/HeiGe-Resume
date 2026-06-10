@@ -2,12 +2,30 @@
 
 本项目所有重要变更记录于此。
 
+## [2.3.1] - 2026-06-10
+
+占位符与文档修复，不改方法论。
+
+### 示例占位符
+- 4 份样例的 GitHub 链接占位符改为 `github.com/your_username`：下划线在 GitHub 用户名里不合法，这个占位符永远不会指向真人（原占位词是 2013 年就被注册的真实用户名）。
+- 设计师与产品经理样例的虚构作品集域名改用保留 TLD：`shenyan.example`、`shenyanzhi.example`，原先两个域名未注册、可被抢注。
+- 后端样例的虚构开源项目改名 `go-ratesluice`（GitHub 全站搜索零命中），原名与多个真实同名仓库撞名。
+- 涉及句柄和域名的预览图（generalist / tailored / heige / newgrad / designer / pm）同步重制。
+
+### 文档与规范
+- SKILL.md frontmatter 合规化：author / version / compatible_platforms 挪进 `metadata:` 下。
+- README 安装命令落地目录与 skill name 对齐（`~/.claude/skills/heige-resume`）；Cursor / Windsurf / Cline 不读取该目录，安装方式改为把 SKILL.md 贴进各家自定义规则。
+- 「零依赖」口径与生产规格对齐：零 JS 依赖，字体走 Google Fonts、带中文系统字体兜底。
+- README 补回「样例画廊 Gallery」标题，导航锚点恢复命中。
+- 工具栏位置文档统一为左下角（与样例 CSS `left:16px;bottom:16px` 一致）。
+- 评测文档：权重表引用改为指向 `ai-screener-optimization.md` 第四节；删去不存在的 `run_screener_eval.py` 引用，明确该评测为人工流程。
+
 ## [2.3.0] - 2026-06-08
 
 加可编辑功能。研究了一圈在线简历生成器和 HTML 简历模板的做法，给成品加了一个在浏览器里直接改文字的编辑层。
 
 ### 新功能
-- 每份简历打开右下角有工具栏：点「编辑」进入编辑模式，姓名、定位句、每条经历、技能、数字都能直接点进去改；「导出 PDF」「下载 HTML」「复位」。
+- 每份简历打开左下角有工具栏：点「编辑」进入编辑模式，姓名、定位句、每条经历、技能、数字都能直接点进去改；「导出 PDF」「下载 HTML」「复位」。
 - 改动自动存浏览器本地（localStorage），刷新不丢。「下载 HTML」存一份带改动的独立文件，打开还能接着改。
 - 7 份简历样例全部带上编辑层（comparison.html 是实证展示页，不加）。
 
