@@ -1,0 +1,14 @@
+{
+  "name": "heige-resume",
+  "version": "2.3.2",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright-core": "1.62.1"
+  }
+}
