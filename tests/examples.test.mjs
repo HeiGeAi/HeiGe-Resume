@@ -26,6 +26,7 @@ test('resume examples remain printable, editable, and machine-readable', () => {
     const source = fs.readFileSync(path.join(EXAMPLES, name), 'utf8');
     assert.match(source, /<meta\s+charset=/i, `${name} is missing a charset`);
     assert.match(source, /<title>[^<]+<\/title>/i, `${name} is missing a title`);
+    assert.equal((source.match(/<h1\b/gi) || []).length, 1, `${name} must expose one primary heading`);
     assert.match(source, /@page\s*\{[^}]*size\s*:\s*A4/i, `${name} lost its A4 print contract`);
     assert.match(source, /@media\s+print/i, `${name} lacks print styles`);
     assert.match(source, /data-he-field/, `${name} lacks the editable layer`);
