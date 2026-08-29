@@ -30,6 +30,8 @@ test('resume examples remain printable, editable, and machine-readable', () => {
     assert.match(source, /@page\s*\{[^}]*size\s*:\s*A4/i, `${name} lost its A4 print contract`);
     assert.match(source, /@media\s+print/i, `${name} lacks print styles`);
     assert.match(source, /data-he-field/, `${name} lacks the editable layer`);
+    assert.match(source, /stripEditingAttributes/, `${name} persists editor-only attributes`);
+    assert.match(source, /pagehide['"], flushSave/, `${name} can lose a pending save on navigation`);
     assert.match(source, /@media print\{\.he-toolbar\{display:none!important\}/, `${name} prints the editor toolbar`);
     assert.doesNotMatch(source, /<(?:canvas|img)\b/i, `${name} embeds key content as graphics`);
 

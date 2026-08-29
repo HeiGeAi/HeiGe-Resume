@@ -105,6 +105,36 @@ test('tracked resumes pass the Chromium mobile and PDF release gate', async (t) 
         await context.close();
       }
     });
+
+    await t.test('editor state is sanitized and flushed before an immediate reload', async () => {
+      const context = await browser.newContext();
+      const page = await openOfflinePage(context, 'heige-resume.html');
+      try {
+        await page.evaluate(() => localStorage.clear());
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        await page.click('[data-act="edit"]');
+        await page.evaluate(() => {
+          const field = document.querySelector('[data-he-field]');
+          field.textContent = '立即保存验收';
+          field.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText' }));
+        });
+        await page.reload({ waitUntil: 'domcontentloaded' });
+        const state = await page.evaluate(() => {
+          const field = document.querySelector('[data-he-field]');
+          return {
+            text: field.textContent,
+            contenteditable: field.getAttribute('contenteditable'),
+            spellcheck: field.getAttribute('spellcheck'),
+          };
+        });
+        assert.equal(state.text, '立即保存验收');
+        assert.equal(state.contenteditable, null);
+        assert.equal(state.spellcheck, null);
+      } finally {
+        await page.close();
+        await context.close();
+      }
+    });
   } finally {
     await browser.close();
   }
