@@ -1,6 +1,6 @@
 {
   "name": "heige-resume",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "private": true,
   "scripts": {
     "test": "node --test tests/*.test.mjs"
