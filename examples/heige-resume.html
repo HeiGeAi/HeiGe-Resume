@@ -185,7 +185,9 @@
   var roots = isDeck ? slides : [].slice.call(document.querySelectorAll('.page'));
   if (!roots.length) return;
   var KEY = 'heige-edit::' + location.pathname;
-  var editing = false, saveTimer = null;
+  var editing = false, saveTimer = null, stale = false;
+  function hash(s){ var h = 5381; for (var i = 0; i < s.length; i++){ h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; } return h.toString(36); }
+  var FP = hash(roots.map(function(r){ return r.innerHTML; }).join('\n'));
 
   // ---- inject chrome styles (all screen-only; print hides everything) ----
   var css = document.createElement('style'); css.className = 'he-style';
@@ -224,18 +226,24 @@
   // ---- localStorage save / restore ----
   function save(){
     try {
-      localStorage.setItem(KEY, JSON.stringify(roots.map(function(r){
+      localStorage.setItem(KEY, JSON.stringify({ v: FP, d: roots.map(function(r){
         var c = r.cloneNode(true);
         [].slice.call(c.querySelectorAll('[contenteditable]')).forEach(function(n){ n.removeAttribute('contenteditable'); n.removeAttribute('spellcheck'); });
         return c.innerHTML;
-      })));
+      }) }));
       status('已保存');
     } catch(e){ status('保存失败：浏览器禁止本地存储或空间已满'); }
   }
   function restore(){
     try {
       var data = JSON.parse(localStorage.getItem(KEY));
-      if (data && data.length === roots.length){ data.forEach(function(h,i){ roots[i].innerHTML = h; }); return true; }
+      if (!data) return false;
+      if (data.v !== FP || !Array.isArray(data.d) || data.d.length !== roots.length){
+        stale = true; try { localStorage.removeItem(KEY); } catch(e2){}
+        return false;
+      }
+      data.d.forEach(function(h,i){ roots[i].innerHTML = h; });
+      return true;
     } catch(e){}
     return false;
   }
@@ -331,6 +339,7 @@
   restore();
   markFields();
   buildToolbar();
+  if (stale) status('模板已更新，改动已重置');
   roots.forEach(function(r){
     r.addEventListener('input', function(){ clearTimeout(saveTimer); saveTimer=setTimeout(save, 400); });
   });
