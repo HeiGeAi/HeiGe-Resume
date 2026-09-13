@@ -38,3 +38,30 @@ test('resume examples remain printable, editable, and machine-readable', () => {
     }
   }
 });
+
+test('embedded editable layer stays in sync with the reference copy', () => {
+  // comment-tolerant comparison: drop full-line comments and trailing inline
+  // comments (two or more spaces before '//'), then compare line by line.
+  const normalize = (code) => code
+    .split('\n')
+    .filter((line) => !line.trimStart().startsWith('//'))
+    .map((line) => line.replace(/\s{2,}\/\/.*$/, '').trimEnd())
+    .filter((line) => line !== '')
+    .join('\n');
+
+  const reference = fs.readFileSync(path.join(ROOT, 'references', 'editable-layer.md'), 'utf8');
+  const refMatch = reference.match(/^<script>\n([\s\S]*?)^<\/script>$/m);
+  assert.ok(refMatch, 'reference editable layer block not found');
+  const expected = normalize(refMatch[1]);
+
+  const resumes = fs.readdirSync(EXAMPLES).filter((name) => name.endsWith('-resume.html'));
+  assert.equal(resumes.length, 7, 'unexpected resume fixture count');
+  for (const name of resumes) {
+    const source = fs.readFileSync(path.join(EXAMPLES, name), 'utf8');
+    const marker = source.indexOf('HeiGe 可编辑层');
+    assert.ok(marker >= 0, `${name} lacks the editable layer marker`);
+    const embed = source.slice(marker).match(/<script>\n([\s\S]*?)<\/script>/);
+    assert.ok(embed, `${name} editable layer script not found`);
+    assert.equal(normalize(embed[1]), expected, `${name} editable layer drifted from references/editable-layer.md`);
+  }
+});
