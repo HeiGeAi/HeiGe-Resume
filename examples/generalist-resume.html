@@ -209,6 +209,15 @@
       status('已保存');
     } catch(e){ status('保存失败：浏览器禁止本地存储或空间已满'); }
   }
+  function sanitize(h){
+    var t = document.createElement('template');
+    t.innerHTML = h;
+    [].slice.call(t.content.querySelectorAll('script')).forEach(function(n){ n.remove(); });
+    [].slice.call(t.content.querySelectorAll('*')).forEach(function(n){
+      [].slice.call(n.attributes).forEach(function(a){ if (/^on/i.test(a.name)) n.removeAttribute(a.name); });
+    });
+    return t.innerHTML;
+  }
   function restore(){
     try {
       var data = JSON.parse(localStorage.getItem(KEY));
@@ -217,7 +226,7 @@
         stale = true; try { localStorage.removeItem(KEY); } catch(e2){}
         return false;
       }
-      data.d.forEach(function(h,i){ roots[i].innerHTML = h; });
+      data.d.forEach(function(h,i){ roots[i].innerHTML = sanitize(h); });
       return true;
     } catch(e){}
     return false;
