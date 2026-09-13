@@ -198,7 +198,11 @@
 
   // ---- localStorage save / restore ----
   function save(){
-    try { localStorage.setItem(KEY, JSON.stringify(roots.map(function(r){return r.innerHTML;}))); } catch(e){}
+    try { localStorage.setItem(KEY, JSON.stringify(roots.map(function(r){
+      var c = r.cloneNode(true);
+      [].slice.call(c.querySelectorAll('[contenteditable]')).forEach(function(n){ n.removeAttribute('contenteditable'); n.removeAttribute('spellcheck'); });
+      return c.innerHTML;
+    }))); } catch(e){}
     status('已保存');
   }
   function restore(){
